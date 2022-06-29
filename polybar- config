@@ -31,8 +31,8 @@ format-offset =
 [colors]
 ; Nord theme ============
 background = #DD1C1F26
-foreground = #868686
-alert = #518EAD
+foreground = #999999
+alert = #2B5F79
 volume-min = #a3be8c
 volume-med = #ebcb8b
 volume-max = #bf616a
@@ -52,7 +52,7 @@ override-redirect = false
 bottom = false
 fixed-center = true
 width = 100%
-height = 19
+height = 17
 ;offset-x = 0%
 ;offset-y = 0%
 
@@ -82,18 +82,18 @@ module-margin-right = 1
 
 font-0 = "Noto Sans:size=9;0"
 font-1 = "FontAwesome:size=10;0"
-font-2 = "Noto Sans Mayan Numerals:size=13;0"
-font-3 = "joypixels:style=Regular:scale=13;0"
-font-4 = "Nimbus Sans Narrow:style=Regular:scale=13;0"
-font-5 = "Cascadia Code:scale=13;0"
-font-6 = "Ubuntu:scale=13;"
-font-7 = "SauceCodePro Nerd Font:scale=13;"
+font-2 = "Noto Sans Mayan Numerals:size=8;0"
+font-3 = "joypixels:style=Regular:scale=10;0"
+font-4 = "Nimbus Sans Narrow:style=Regular:scale=10;0"
+font-5 = "Cascadia Code:scale=10;0"
+font-6 = "Ubuntu:scale=10;"
+font-7 = "SauceCodePro Nerd Font:scale=10;"
 
 ;sep spotify1 sep spotify-prev sep spotify-play-pause sep spotify-next sep
 
-modules-left = i3 sep xwindow
-modules-center = 
-modules-right =  sep xweather sep jgmenu sep date time sep arch-aur-updates
+modules-left = i3 xwindow sep 
+modules-center =
+modules-right =  sep xweather sep jgmenu sep popup-calendar sep all-updates
 
 separator = 
 
@@ -150,7 +150,7 @@ bottom = true
 fixed-center = true
 
 width = 100%
-height = 19
+height = 17
 ;offset-x = 0%
 ;offset-y = 0%
 
@@ -178,19 +178,19 @@ module-margin-right = 1
 
 font-0 = "Noto Sans:size=9;0"
 font-1 = "FontAwesome:size=10;0"
-font-2 = "Noto Sans Mayan Numerals:size=10;0"
-font-3 = "joypixels:style=Regular:scale=13;0"
-font-4 = "Nimbus Sans Narrow:style=Regular:scale=13;0"
-font-5 = "Cascadia Code:scale=13;0"
-font-6 = "Ubuntu:scale=13;"
-font-7 = "SauceCodePro Nerd Font:scale=13;"
+font-2 = "Noto Sans Mayan Numerals:size=8;0"
+font-3 = "joypixels:style=Regular:scale=10;0"
+font-4 = "Nimbus Sans Narrow:style=Regular:scale=10;0"
+font-5 = "Cascadia Code:scale=10;0"
+font-6 = "Ubuntu:scale=10;"
+font-7 = "SauceCodePro Nerd Font:scale=10;"
 
 ;weather temperature2 filesystem battery wireless-network alsa variety pavolume volume
 ;sep pub-ip load-average sep networkspeedup networkspeeddown sep pacman-updates system-fan-speed sep xkeyboard
 
 modules-left = kernel sep filesystem sep memory3 sep temperature1 sep cpu2
 modules-center = cpu
-modules-right = wireless-network sep xbacklight sep pavolume sep battery sep bluetooth sep variety
+modules-right = wireless-network sep backlight sep pavolume sep battery sep bluetooth sep variety
 
 ;dim-value = 1.0
 
@@ -355,10 +355,24 @@ format-background = ${colors.background}
 ############                       MODULES A-Z                          ############
 ####################################################################################
 
-[module/arch-aur-updates]
+[module/arch-updates]
 type = custom/script
-exec = ~/.config/polybar/scripts/check-all-updates.sh
-interval = 6000
+exec = ~/.config/polybar/scripts/check-arch-updates.sh
+interval = 1000
+label = %output%
+label-foreground = #FFFFFF
+format-foreground = ${colors.foreground}
+format-background = ${colors.background}
+format-prefix = ": "
+format-prefix-foreground = #518EAD
+format-underline = #565529
+
+######
+
+[module/aur-updates]
+type = custom/script
+exec = ~/.config/polybar/scripts/check-aur-updates.sh
+interval = 1000
 label = %output%
 label-foreground = #FFFFFF
 format-foreground = ${colors.foreground}
@@ -366,21 +380,20 @@ format-background = ${colors.background}
 format-prefix = "  "
 format-prefix-foreground = #518EAD
 format-underline = #565529
-click-right = pamac-manager &
-click-left = xfce4-terminal &
 
-#########
+######
 
-[module/aur-updates]
+[module/all-updates]
 type = custom/script
-exec = ~/.config/polybar/scripts/check-aur-updates.sh
+exec = ~/.config/polybar/scripts/check-all-updates.sh
 interval = 1000
-label = Aur: %output%
+label = %output%
+label-foreground = #FFFFFF
 format-foreground = ${colors.foreground}
 format-background = ${colors.background}
-format-prefix = "  "
-format-prefix-foreground = #FFBB00
-format-underline = #FFBB00
+format-prefix = "  "
+format-prefix-foreground = #518EAD
+format-underline = #565529
 
 ####################################################################################
 
@@ -497,6 +510,20 @@ format-underline = #565529
 
 ####################################################################################
 
+[module/popup-calendar]
+type = custom/script
+exec = ~/.config/polybar/scripts/popup-calendar.sh
+interval = 5
+format-prefix = "  "
+format-prefix-foreground = #ffffff
+format-prefix-underline = #565529
+format-foreground = ${colors.foreground}
+format-background = ${colors.background}
+label-underline= #565529
+click-left = ~/.config/polybar/scripts/popup-calendar.sh --popup &
+
+################################################################################
+
 [module/cpu]
 type = internal/cpu
 
@@ -551,6 +578,7 @@ ramp-coreload-5 = 𝋪
 ramp-coreload-6 = 𝋫
 ramp-coreload-7 = 𝋬
 ramp-signal-foreground = ${colors.foreground}
+click-right = exec xfce4-taskmanager
 
 format-foreground = #77BCFF
 format-background = ${colors.background}
@@ -590,32 +618,23 @@ label = Cpu: %percentage%
 ####################################################################################
 
 [module/date]
+;https://github.com/jaagr/polybar/wiki/Module:-date
 type = internal/date
-interval = 3600
-date = "%A  %B %d, %Y"
-date-alt = "%A, %B %d, %Y"
-format-prefix = "  "
+; Seconds to sleep between updates
+interval = 1
+; See "http://en.cppreference.com/w/cpp/io/manip/put_time" for details on how to format the date string
+; NOTE: if you want to use syntax tags here you need to use %%{...}
+date = " %Y-%m-%d%"
+date-alt = " %d-%m-%Y"
+time = %H:%M
+time-alt = %H:%M
+format-prefix = " "
 format-prefix-foreground = #888888
 format-prefix-underline = #565529
 format-foreground = ${colors.foreground}
 format-background = ${colors.background}
 label-underline= #565529
-label = "%{A1:io.elementary.calendar %U &:} %date%%{A}"
-### %A  %B %d, %Y %H:%M:%S 
-
-[module/time]
-type = internal/date
-interval = 1
-time = "%T"
-time-alt = "%H:%M:%S"
-format-prefix = ""
-format-prefix-foreground = #888888
-format-prefix-underline = #565529
-label-underline= #565529
-format-foreground = #FFFFFF
-format-background = ${colors.background}
-label = %time%
-enable-click = true
+label = %date% %time%
 
 #################################################################
 
@@ -636,7 +655,7 @@ icon-5 = 5;
 icon-6 = 6;
 icon-7 = 7;
 icon-8 = 8;
-icon-9 = 9;
+icon-9 = 9;
 
 label-monitor = %name%
 
@@ -702,7 +721,10 @@ spacing = 2
 ;   <bar-free>
 ;   <bar-used>
 ;   <ramp-capacity>
-format-mounted =   <label-mounted>
+format-mounted = <label-mounted>
+
+format-mounted-prefix = "  "
+format-mounted-prefix-foreground = #EED111
 format-mounted-foreground = ${colors.foreground}
 format-mounted-background = ${colors.background}
 ;format-mounted-overline = #3b3a00
@@ -718,7 +740,7 @@ format-mounted-underline = #565529
 ;   %free%
 ;   %used%
 ; Default: %mountpoint% %percentage_free%%
-label-mounted = %mountpoint% : %used%
+label-mounted = %mountpoint% : %used% @ %free%
 
 ; Available tokens:
 ;   %mountpoint%
@@ -736,7 +758,7 @@ interval = 1204
 exec = echo "Metaphor"
 format-prefix = "鷺   "
 format-prefix-foreground = #EED111
-click-left = exec /usr/bin/brave %U https://www.pandora.com/station/play/569776374840994425
+click-left = exec /usr/bin/brave %U https://www.pandora.com/station/play/411001759508769445
 format-foreground = ${colors.foreground}
 format-background = ${colors.background}
 format-underline = #565529
@@ -754,7 +776,7 @@ format-foreground = ${colors.foreground}
 format-background = ${colors.background}
 format-prefix = "  "
 enable-click = true
-format-prefix-foreground = #EED111
+format-prefix-foreground = #2D9BF1
 ;format-overline = #3b3a00
 format-underline = #565529
 
@@ -1033,7 +1055,7 @@ format-foreground = ${colors.foreground}
 format-background = ${colors.background}
 exec = curl -Ss 'https://wttr.in?0&T&Q' | cut -c 16- | head -2 | xargs echo
 tail = true
-click-left = exec /usr/bin/flatpak run --branch=stable --arch=x86_64 --command=kweather org.kde.kweather
+click-left = exec kweather
 #click-left = gapplication launch org.gnome.Weather & 
 
 [module/weather]
