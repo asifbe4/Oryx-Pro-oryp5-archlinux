@@ -292,7 +292,7 @@ ws-icon-5 = 6;
 ws-icon-6 = 7;
 ws-icon-7 = 8;
 ws-icon-8 = 9;
-ws-icon-9 = 10;
+ws-icon-9 = 10;
 ws-icon-default = ""
 
 ; Available tags:
@@ -770,12 +770,12 @@ type = custom/script
 exec = uname -r
 tail = false
 interval = 1024
-click-right = exec xdg-open https://www.kernel.org///?hl=en/
-click-left = exec urxvt -T 'htop task manager' -e bashtop
 format-foreground = ${colors.foreground}
 format-background = ${colors.background}
 format-prefix = "  "
 enable-click = true
+click-right = exec xdg-open https://www.kernel.org///?hl=en/
+click-left = exec urxvt -T 'htop task manager' -e bashtop
 format-prefix-foreground = #2D9BF1
 ;format-overline = #3b3a00
 format-underline = #565529
@@ -803,6 +803,7 @@ format-underline = #565529
 ;format-overline = #3b3a00
 format-foreground = ${colors.foreground}
 format-background = ${colors.background} 
+click-left = exec urxvt -T 'htop task manager' -e htop
 
 ####################################################################################
 
