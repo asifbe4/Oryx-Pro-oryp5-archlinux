@@ -1,4 +1,4 @@
-##############             POLYBAR July 3, 2022 17:40                 ##############
+##############             POLYBAR Julu 04, 2022 09:40                 ##############
 
 [global/wm]
 ;https://github.com/jaagr/polybar/wiki/Configuration#global-wm-settings
@@ -91,9 +91,9 @@ font-7 = "SauceCodePro Nerd Font:scale=10;"
 
 ;sep spotify1 sep spotify-prev sep spotify-play-pause sep spotify-next sep
 
-modules-left = i3 xwindow sep 
+modules-left = jgmenu-wal i3 xwindow sep 
 modules-center =
-modules-right =  sep xweather sep jgmenu sep popup-calendar sep all-updates
+modules-right =  sep xweather sep jgmenu sep popup-calendar sep aur-updates
 
 separator = 
 
@@ -284,7 +284,7 @@ fuzzy-match = true
 ;               
 
 ws-icon-0 = 1;
-ws-icon-1 = 2;
+ws-icon-1 = 2;
 ws-icon-2 = 3;
 ws-icon-3 = 4;
 ws-icon-4 = 5;
@@ -377,7 +377,7 @@ label = %output%
 label-foreground = #FFFFFF
 format-foreground = ${colors.foreground}
 format-background = ${colors.background}
-format-prefix = "  "
+format-prefix = ": "
 click-right = exec xfce4-power-manager &
 click-left = exec xfce4-terminal &
 format-prefix-foreground = #518EAD
@@ -760,6 +760,18 @@ exec = echo "Metaphor"
 format-prefix = "鷺   "
 format-prefix-foreground = #EED111
 click-left = exec /usr/bin/brave %U https://www.pandora.com/station/play/411001759508769445
+format-foreground = ${colors.foreground}
+format-background = ${colors.background}
+format-underline = #565529
+
+
+[module/jgmenu-wal]
+type = custom/script
+interval = 1204
+exec = echo "Py"
+format-prefix = "  "
+format-prefix-foreground = #1E90FF
+click-left = exec wal -e -i /home/asifbe4/Backgrounds 
 format-foreground = ${colors.foreground}
 format-background = ${colors.background}
 format-underline = #565529
