@@ -21,8 +21,8 @@ pseudo-transparency = true
 ; Define fallback values used by all module formats
 format-foreground = #FF0000
 format-background = #00FF00
-format-underline = ${colors.background}
-format-overline = ${colors.background}
+format-underline = 
+format-overline = 
 format-spacing =
 format-padding =
 format-margin =
@@ -71,11 +71,11 @@ line-color = #f00
 ;border-size = 0
 ;border-left-size = 25
 ;border-right-size = 25
-border-top-size = 4
+border-top-size = 5
 border-bottom-size = 2
 border-color = ${colors.background}
 
-padding-left = 0
+padding-left = 
 padding-right = 0
 
 module-margin-left = 0
@@ -87,8 +87,8 @@ font-2 = "Noto Sans Mayan Numerals:size=8;0"
 font-3 = "joypixels:style=Regular:scale=10;0"
 font-4 = "Nimbus Sans Narrow:style=Regular:scale=10;0"
 font-5 = "Cascadia Code:scale=10;0"
-font-6 = "Ubuntu:scale=10;"
-font-7 = "SauceCodePro Nerd Font:scale=8;"
+font-6 = "Symbols Nerd Font:scale=10;"
+font-7 = "SauceCodePro Nerd Font Mono:scale=10;"
 
 ;sep spotify1 sep spotify-prev sep spotify-play-pause sep spotify-next sep
 
@@ -112,6 +112,13 @@ separator =
 #i3: Make the bar appear below windows
 wm-restack = i3
 ;override-redirect = true
+
+; Set a DPI values used when rendering text
+; This only affects scalable fonts
+; Set this to 0 to let polybar calculate the dpi from the screen size.
+; dpi = 
+dpi-x = 96
+dpi-y = 96
 
 ; Enable support for inter-process messaging
 ; See the Messaging wiki page for more details.
@@ -183,8 +190,8 @@ font-2 = "Noto Sans Mayan Numerals:size=8;0"
 font-3 = "joypixels:style=Regular:scale=10;0"
 font-4 = "Nimbus Sans Narrow:style=Regular:scale=10;0"
 font-5 = "Cascadia Code:scale=10;0"
-font-6 = "Ubuntu:scale=10;"
-font-7 = "SauceCodePro Nerd Font:scale=8;"
+font-6 = "Symbols Nerd Font:scale=10;"
+font-7 = "SauceCodePro Nerd Font Mono:scale=10;"
 
 ;weather temperature2 filesystem battery wireless-network alsa variety pavolume volume
 ;sep pub-ip load-average sep networkspeedup networkspeeddown sep pacman-updates system-fan-speed sep xkeyboard
@@ -208,6 +215,13 @@ tray-underline = #1E90FF
 #i3: Make the bar appear below windows
 wm-restack = i3
 ;override-redirect = true
+
+; Set a DPI values used when rendering text
+; This only affects scalable fonts
+; Set this to 0 to let polybar calculate the dpi from the screen size.
+; dpi = 
+dpi-x = 96
+dpi-y = 96
 
 ; Enable support for inter-process messaging
 ; See the Messaging wiki page for more details.
@@ -244,7 +258,10 @@ type = internal/i3
 ;
 ; Useful if you want to show monitor specific workspaces
 ; on different bars
-;
+
+; Reload upon receiving XCB_RANDR_SCREEN_CHANGE_NOTIFY events
+screenchange-reload = true
+
 ; Default: false
 pin-workspaces = false
 
@@ -284,16 +301,16 @@ fuzzy-match = true
 ;http://fontawesome.io/cheatsheet/
 ;                     ;               
 
-ws-icon-0 = 1;
-ws-icon-1 = 2;
-ws-icon-2 = 3;
-ws-icon-3 = 4;
-ws-icon-4 = 5;
-ws-icon-5 = 6;
-ws-icon-6 = 7;
-ws-icon-7 = 8;
-ws-icon-8 = 9;
-ws-icon-9 = 10;
+ws-icon-0 = 1;@:
+ws-icon-1 = 2;:
+ws-icon-2 = 3;:
+ws-icon-3 = 4;:
+ws-icon-4 = 5;:
+ws-icon-5 = 6;:
+ws-icon-6 = 7;:
+ws-icon-7 = 8;:
+ws-icon-8 = 9;:
+ws-icon-9 = 10;:
 ws-icon-default = ""
 
 ; Available tags:
@@ -389,7 +406,7 @@ format-underline = #565529
 type = custom/script
 exec = ~/.config/polybar/scripts/check-all-updates.sh
 interval = 1000
-label = %output%
+label =  %output%
 label-foreground = #FFFFFF
 format-foreground = ${colors.foreground}
 format-background = ${colors.background}
@@ -515,7 +532,7 @@ format-underline = #565529
 type = custom/script
 exec = ~/.config/polybar/scripts/popup-calendar.sh
 interval = 5
-format-prefix = "  "
+format-prefix = "   "
 format-prefix-foreground = #FFBB00
 format-prefix-underline = #565529
 format-foreground = ${colors.foreground}
@@ -594,7 +611,7 @@ type = internal/cpu
 interval = 1
 format-foreground = #77BCFF
 format-background = ${colors.background}
-format-prefix = "  "
+format-prefix = "  "
 click-right = exec xfce4-taskmanager
 
 format-prefix-foreground = #888888
@@ -667,7 +684,7 @@ spacing = 2
 ;   <ramp-capacity>
 format-mounted = <label-mounted>
 
-format-mounted-prefix = "  "
+format-mounted-prefix = "  "
 format-mounted-prefix-foreground = ${colors.foreground}
 format-mounted-foreground = ${colors.foreground}
 format-mounted-background = ${colors.background}
@@ -700,7 +717,7 @@ format-unmounted-underline = ${colors.alert}
 type = custom/script
 interval = 1204
 exec = echo "Metaphor"
-format-prefix = "  "
+format-prefix = "  "
 format-prefix-foreground = #FFFFFF
 click-left = exec /usr/bin/brave %U https://www.pandora.com/station/play/411001759508769445
 format-foreground = ${colors.foreground}
@@ -711,8 +728,8 @@ format-underline = #565529
 [module/jgmenu-wal]
 type = custom/script
 interval = 1
-exec = echo " "
-format-prefix = " "
+exec = echo ": "
+format-prefix = "  "
 format-prefix-foreground = #1E90FF
 click-left = exec wal -i /home/asifbe4/Backgrounds
 format-foreground = ${colors.foreground}
@@ -728,7 +745,7 @@ tail = false
 interval = 1024
 format-foreground = ${colors.foreground}
 format-background = ${colors.background}
-format-prefix = "  "
+format-prefix = "    "
 enable-click = true
 click-right = exec xdg-open https://www.kernel.org///?hl=en/
 click-left = exec urxvt -T 'htop task manager' -e bashtop
@@ -753,7 +770,7 @@ interval = 1
 ;   %mb_total%
 label = %mb_used%
 format = <label>
-format-prefix = "  "
+format-prefix = "  "
 format-prefix-foreground = #FFFFFF
 format-underline = #565529
 ;format-overline = #3b3a00
@@ -882,11 +899,11 @@ label = %temperature%
 label-warn = %temperature%
 label-warn-foreground = #1A1A1A
 
-ramp-0 = :
-ramp-1 = :
-ramp-2 = :
-ramp-3 = :
-ramp-4 = :
+ramp-0 = :
+ramp-1 = :
+ramp-2 = :
+ramp-3 = :
+ramp-4 = :
 ramp-foreground = #FFBB00
 
 ####################################################################################
@@ -911,7 +928,7 @@ click-left = exec xfce4-terminal -e "htop" &
 type = custom/script
 interval = 10
 format = <label>
-format-prefix = "    "
+format-prefix = "   "
 format-prefix-foreground = #518EAD
 format-underline = #565529
 format-foreground = ${colors.foreground}
@@ -1020,7 +1037,7 @@ interval = 1
 tail = true
 format-foreground = ${colors.foreground}
 format-background = ${colors.background}
-format-prefix = "  "
+format-prefix = "  "
 format-prefix-foreground = #FFBB00
 format-underline = #565529
 ;format-overline = #3b3a00
