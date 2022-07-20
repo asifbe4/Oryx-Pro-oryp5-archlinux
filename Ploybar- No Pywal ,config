@@ -587,14 +587,14 @@ label-warn = CPU %percentage%%
 ; Spacing (number of spaces, pixels, points) between individual per-core ramps
 ramp-coreload-spacing = 0
 
-ramp-coreload-0 = ⢓⡴
-ramp-coreload-1 = ⢵⣡
-ramp-coreload-2 = ⣉⣞
-ramp-coreload-3 = ⢻⢠
-ramp-coreload-4 = ⡷⢌
-ramp-coreload-5 = ⢕⣉
-ramp-coreload-6 = ⢝⢩
-ramp-coreload-7 = ⣺⢊
+ramp-coreload-0 = ⣞⢻⢠
+ramp-coreload-1 = ⢵⣡⣡
+ramp-coreload-2 = ⣉⣡⣞
+ramp-coreload-3 = ⢓⣞⡴
+ramp-coreload-4 = ⡷⣞⢌
+ramp-coreload-5 = ⢕⣉⡴
+ramp-coreload-6 = ⢝⢩⢌
+ramp-coreload-7 = ⣺⢊⡷
 format-coreload-foreground = #FFBB00
 
 format-foreground = #FFBB00
