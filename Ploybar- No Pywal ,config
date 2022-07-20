@@ -94,7 +94,7 @@ font-7 = "SauceCodePro Nerd Font Mono:scale=10;"
 
 modules-left = jgmenu-wal i3 xwindow sep 
 modules-center =
-modules-right =  sep xweather sep jgmenu sep popup-calendar sep all-updates
+modules-right =  sep xweather sep popup-calendar sep jgmenu sep all-updates
 
 separator = 
 
@@ -174,7 +174,7 @@ line-size = 1
 ;border-size = 1
 ;border-left-size = 25
 ;border-right-size = 25
-border-top-size = 4
+border-top-size = 3
 border-bottom-size = 3
 border-color = ${colors.background}
 
@@ -185,13 +185,13 @@ module-margin-left = 1
 module-margin-right = 1
 
 font-0 = "Noto Sans:size=9;0"
-font-1 = "FontAwesome:size=10.0"
+font-1 = "FontAwesome:size=9.0"
 font-2 = "Noto Sans Mayan Numerals:size=8;0"
 font-3 = "joypixels:style=Regular:scale=10;0"
-font-4 = "Nimbus Sans Narrow:style=Regular:scale=10;0"
-font-5 = "Cascadia Code:scale=10;0"
-font-6 = "Symbols Nerd Font:scale=10;"
-font-7 = "SauceCodePro Nerd Font Mono:scale=10;"
+font-4 = "Nimbus Sans Narrow:style=Regular:size=10;0"
+font-5 = "Cascadia Code:size=10;0"
+font-6 = "Symbols Nerd Fonts:size=12;"
+font-7 = "SauceCodePro Nerd Font Mono:size=9;"
 
 ;weather temperature2 filesystem battery wireless-network alsa variety pavolume volume
 ;sep pub-ip load-average sep networkspeedup networkspeeddown sep pacman-updates system-fan-speed sep xkeyboard
@@ -532,7 +532,7 @@ format-underline = #565529
 type = custom/script
 exec = ~/.config/polybar/scripts/popup-calendar.sh
 interval = 5
-format-prefix = "   "
+format-prefix = "  "
 format-prefix-foreground = #FFBB00
 format-prefix-underline = #565529
 format-foreground = ${colors.foreground}
@@ -587,14 +587,14 @@ label-warn = CPU %percentage%%
 ; Spacing (number of spaces, pixels, points) between individual per-core ramps
 ramp-coreload-spacing = 0
 
-ramp-coreload-0 = 𝋥
-ramp-coreload-1 = 𝋦
-ramp-coreload-2 = 𝋧
-ramp-coreload-3 = 𝋨
-ramp-coreload-4 = 𝋩
-ramp-coreload-5 = 𝋪
-ramp-coreload-6 = 𝋫
-ramp-coreload-7 = 𝋬
+ramp-coreload-0 = ⢓⡴
+ramp-coreload-1 = ⢵⣡
+ramp-coreload-2 = ⣉⣞
+ramp-coreload-3 = ⢻⢠
+ramp-coreload-4 = ⡷⢌
+ramp-coreload-5 = ⢕⣉
+ramp-coreload-6 = ⢝⢩
+ramp-coreload-7 = ⣺⢊
 format-coreload-foreground = #FFBB00
 
 format-foreground = #FFBB00
@@ -928,7 +928,7 @@ click-left = exec xfce4-terminal -e "htop" &
 type = custom/script
 interval = 10
 format = <label>
-format-prefix = "   "
+format-prefix = "   "
 format-prefix-foreground = #518EAD
 format-underline = #565529
 format-foreground = ${colors.foreground}
@@ -1003,7 +1003,7 @@ format-connected-prefix-background = ${colors.background}
 format-connected-underline = #565529
 ;format-connected-overline = #3b3a00
 
-label-disconnected = %ifname%_asifbe4
+label-disconnected = Asifbe4line-0ut
 label-disconnected-foreground = #5FB0FF
 label-disconnected-background = ${colors.background}
 label-connected = %{A1:xfce4-terminal -e nmtui &:} %downspeed:9%%{A} %essid% 
@@ -1011,20 +1011,20 @@ label-connected = %{A1:xfce4-terminal -e nmtui &:} %downspeed:9%%{A} %essid%
 format-disconnected = <label-disconnected>
 format-disconnected-foreground = ${colors.alert}
 format-disconnected-background = ${colors.background}
-;format-disconnected-prefix = " "
-format-disconnected-prefix-foreground = ${colors.alert}
+format-disconnected-prefix = "  "
+format-disconnected-prefix-foreground = ${colors.foreground}
 format-disconnected-prefix-background = ${colors.background}
 ;format-disconnected-overline = #50518EAD
 format-disconnected-underline = #565529
 
-ramp-signal-0 = 𝋥
-ramp-signal-1 = 𝋦
-ramp-signal-2 = 𝋧
-ramp-signal-3 = 𝋨
-ramp-signal-4 = 𝋩
-ramp-signal-5 = 𝋪
-ramp-signal-6 = 𝋫
-ramp-signal-7 = 𝋬
+ramp-signal-0 = ⡯
+ramp-signal-1 = ⢽
+ramp-signal-2 = ⣘
+ramp-signal-3 = ⣼
+ramp-signal-4 = ⣙
+ramp-signal-5 = ⣎
+ramp-signal-6 = ⣳
+ramp-signal-7 = ⣿
 ramp-signal-foreground = #2D9BF1
 
 ###################################################################################
@@ -1037,7 +1037,7 @@ interval = 1
 tail = true
 format-foreground = ${colors.foreground}
 format-background = ${colors.background}
-format-prefix = "  "
+format-prefix = "  "
 format-prefix-foreground = #FFBB00
 format-underline = #565529
 ;format-overline = #3b3a00
