@@ -72,8 +72,8 @@ line-color = #f00
 ;border-size = 0
 ;border-left-size = 25
 ;border-right-size = 25
-border-top-size = 5
-border-bottom-size = 2
+border-top-size = 4
+border-bottom-size = 1
 border-color = ${colors.background}
 
 padding-left = 
@@ -302,7 +302,7 @@ fuzzy-match = true
 ;http://fontawesome.io/cheatsheet/
 ;                     ;               
 
-ws-icon-0 = 1;:
+ws-icon-0 = 1;@:
 ws-icon-1 = 2;:
 ws-icon-2 = 3;:
 ws-icon-3 = 4;:
@@ -311,7 +311,7 @@ ws-icon-5 = 6;:
 ws-icon-6 = 7;:
 ws-icon-7 = 8;:
 ws-icon-8 = 9;:
-ws-icon-9 = 10;:@
+ws-icon-9 = 10;::
 ws-icon-default = ""
 
 ; Available tags:
@@ -334,7 +334,7 @@ label-mode-background = #FFBB00
 label-focused = %icon%  %name%
 label-focused-background = ${colors.background}
 label-focused-foreground = #FFBB00
-label-focused-underline = #3b3a00
+label-focused-underline = #FFBB00
 label-focused-padding = 2
 
 ; Available tokens:
@@ -353,7 +353,7 @@ label-unfocused-underline =
 label-visible =   %icon% %name%
 label-visible-background = ${self.label-focused-background}
 label-visible-underline = ${self.label-focused-underline}
-label-visible-padding = 2
+label-visible-padding = 1
 
 ; Available tokens:
 ;   %name%
@@ -364,7 +364,7 @@ label-visible-padding = 2
 label-urgent = %icon%  %name%
 label-urgent-background = ${self.label-focused-background}
 label-urgentround = #3F51B5
-label-urgent-padding = 2
+label-urgent-padding = 1
 
 format-foreground = ${colors.foreground}
 format-background = ${colors.background}
@@ -412,7 +412,7 @@ label =  %output%
 label-foreground = #FFFFFF
 format-foreground = ${colors.foreground}
 format-background = ${colors.background}
-format-prefix = ":  "
+format-prefix = ":  "
 click-left = exec alacritty &
 format-prefix-foreground = #518EAD
 format-underline = #565529
@@ -536,7 +536,7 @@ format-underline = #565529
 type = custom/script
 exec = ~/.config/polybar/scripts/popup-calendar.sh
 interval = 5
-format-prefix = "  "
+format-prefix = "  "
 format-prefix-foreground = #FFBB00
 format-prefix-underline = #565529
 format-foreground = ${colors.foreground}
@@ -722,7 +722,7 @@ format-unmounted-underline = ${colors.alert}
 type = custom/script
 interval = 1204
 exec = echo "Metaphor"
-format-prefix = "  "
+format-prefix = "  "
 format-prefix-foreground = #FFFFFF
 click-left = exec /usr/bin/brave %U https://www.pandora.com/station/play/411001759508769445
 format-foreground = ${colors.foreground}
@@ -733,13 +733,13 @@ format-underline = #565529
 [module/jgmenu-wal]
 type = custom/script
 interval = 1
-exec = echo ": "
-format-prefix = "  "
+exec = echo ":"
+format-prefix = "  "
 format-prefix-foreground = #1E90FF
 click-left = exec wal -i /home/asifbe4/Backgrounds -e
 format-foreground = ${colors.foreground}
 format-background = ${colors.background}
-format-underline = #565529
+#format-underline = #565529
 
 ############################################################################################################################################################
 
@@ -750,7 +750,7 @@ tail = false
 interval = 1024
 format-foreground = ${colors.foreground}
 format-background = ${colors.background}
-format-prefix = "    "
+format-prefix = "   "
 enable-click = true
 click-right = exec xfce4-taskmanager &
 click-left = exec urxvt -T 'htop task manager' -e bashtop
@@ -894,7 +894,6 @@ format-background = ${colors.background}
 type = custom/script
 exec = ~/.config/polybar/scripts/system-fan-speed.sh
 interval = 10
-
 content-foreground = #518EAD
 content-background = ${colors.background}
 format-foreground = ${colors.foreground}
@@ -960,7 +959,7 @@ click-left = exec xfce4-terminal -e "htop" &
 type = custom/script
 interval = 10
 format = <label>
-format-prefix = "   "
+format-prefix = " "
 format-prefix-foreground = #518EAD
 format-underline = #565529
 format-foreground = ${colors.foreground}
@@ -974,7 +973,7 @@ click-left = exec kweather
 type = custom/script
 interval = 10
 format = <label>
-format-prefix = "    "
+format-prefix = "   "
 format-prefix-foreground = #518EAD
 format-underline = #565529
 format-foreground = ${colors.foreground}
@@ -1144,13 +1143,13 @@ format-foreground = #FFFFFF
 format-prefix =
 format-prefix-foreground = ${colors.foreground}
 format-padding = 
-format-underline = #565529
+#format-underline = #FFBB00
 
 ; Available tokens:
 ;   %title%
 ; Default: %title%
 label = %title% 
-label-maxlen = 180
+label-maxlen = 200
 
 ; Used instead of label when there is no window title
 ; Available tokens:
