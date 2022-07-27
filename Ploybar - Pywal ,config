@@ -1,5 +1,5 @@
 ############################################################################################################################################################
-############            POLYBAR July 19, 2022 16:40                          ###############################################################################
+############            POLYBAR July 27, 2022 11:40                          ###############################################################################
 ############################################################################################################################################################
 
 [global/wm]
@@ -93,7 +93,7 @@ font-7 = "SauceCodePro Nerd Font Mono:scale=13;"
 
 ;sep spotify1 sep spotify-prev sep spotify-play-pause sep spotify-next sep
 
-modules-left = jgmenu-wal i3 xwindow sep 
+modules-left = jgmenu-wal i3 sep xwindow sep 
 modules-center =
 modules-right =  sep xweather sep popup-calendar sep jgmenu sep all-updates sep xkeyboard  
 
@@ -199,7 +199,7 @@ font-7 = "SauceCodePro Nerd Font Mono:scale=13;"
 
 modules-left = kernel sep memory3 sep filesystem sep temperature sep cpu2 
 modules-center = sep cpu sep
-modules-right = wireless-network sep variety sep backlight sep pavolume sep bluetooth  battery
+modules-right = wireless-network sep variety sep backlight sep pavolume sep bluetooth sep battery
 
 ;dim-value = 1.0
 
@@ -334,7 +334,7 @@ label-mode-background = #FFBB00
 label-focused = %icon%  %name%
 label-focused-background = ${colors.background}
 label-focused-foreground = #FFBB00
-label-focused-underline = #FFBB00
+label-focused-underline = #565529
 label-focused-padding = 2
 
 ; Available tokens:
@@ -353,7 +353,7 @@ label-unfocused-underline =
 label-visible =   %icon% %name%
 label-visible-background = ${self.label-focused-background}
 label-visible-underline = ${self.label-focused-underline}
-label-visible-padding = 1
+label-visible-padding = 2
 
 ; Available tokens:
 ;   %name%
@@ -364,7 +364,7 @@ label-visible-padding = 1
 label-urgent = %icon%  %name%
 label-urgent-background = ${self.label-focused-background}
 label-urgentround = #3F51B5
-label-urgent-padding = 1
+label-urgent-padding = 2
 
 format-foreground = ${colors.foreground}
 format-background = ${colors.background}
@@ -882,7 +882,7 @@ format-overline = #3b3a00
 ; alternative separator
 type = custom/text
 content = "|"
-content-foreground = #484848
+content-foreground = #000000
 content-background = ${colors.background}
 format-foreground = ${colors.foreground}
 format-background = ${colors.background}
