@@ -32,10 +32,9 @@ format-offset =
 
 [colors]
 ; Nord theme ============
-background = #DD23262F
+background = #EE23262F
 foreground = #B8B8B8
-alert = #FFBB0000
-alert-background = #FFBB00
+alert = ${xrdb:color:#222}
 volume-min = #a3be8c
 volume-med = #ebcb8b
 volume-max = #bf616a
@@ -55,7 +54,7 @@ override-redirect = false
 bottom = false
 fixed-center = true
 width = 100%
-height = 20
+height = 18
 ;offset-x = 0%
 ;offset-y = 0%
 
@@ -84,13 +83,13 @@ module-margin-left = 0
 module-margin-right = 1
 
 font-0 = "Noto Sans:size=9;0"
-font-1 = "FontAwesome:size=10.0"
+font-1 = "FontAwesome:size=9.0"
 font-2 = "Noto Sans Mayan Numerals:size=8;0"
-font-3 = "joypixels:style=Regular:scale=10;0"
-font-4 = "Nimbus Sans Narrow:style=Regular:scale=10;0"
-font-5 = "Cascadia Code:scale=10;0"
-font-6 = "Symbols Nerd Font:scale=10;"
-font-7 = "SauceCodePro Nerd Font Mono:scale=10;"
+font-3 = "joypixels:style=Regular:size=13;0"
+font-4 = "Nimbus Sans Narrow:style=Regular:size=13;0"
+font-5 = "Cascadia Code:size=13;0"
+font-6 = "Symbols Nerd Font:scale=14;"
+font-7 = "SauceCodePro Nerd Font Mono:scale=13;"
 
 ;sep spotify1 sep spotify-prev sep spotify-play-pause sep spotify-next sep
 
@@ -160,7 +159,7 @@ bottom = true
 fixed-center = true
 
 width = 100%
-height = 20
+height = 18
 ;offset-x = 0%
 ;offset-y = 0%
 
@@ -176,7 +175,7 @@ line-size = 1
 ;border-size = 1
 ;border-left-size = 25
 ;border-right-size = 25
-border-top-size = 3
+border-top-size = 5
 border-bottom-size = 3
 border-color = ${colors.background}
 
@@ -189,17 +188,17 @@ module-margin-right = 1
 font-0 = "Noto Sans:size=9;0"
 font-1 = "FontAwesome:size=9.0"
 font-2 = "Noto Sans Mayan Numerals:size=8;0"
-font-3 = "joypixels:style=Regular:scale=10;0"
-font-4 = "Nimbus Sans Narrow:style=Regular:size=10;0"
-font-5 = "Cascadia Code:size=10;0"
-font-6 = "Symbols Nerd Fonts:size=12;"
-font-7 = "SauceCodePro Nerd Font Mono:size=9;"
+font-3 = "joypixels:style=Regular:size=13;0"
+font-4 = "Nimbus Sans Narrow:style=Regular:size=13;0"
+font-5 = "Cascadia Code:size=13;0"
+font-6 = "Symbols Nerd Font:scale=14;"
+font-7 = "SauceCodePro Nerd Font Mono:scale=13;"
 
 ;weather temperature2 filesystem battery wireless-network alsa variety pavolume volume
 ;sep pub-ip load-average sep networkspeedup networkspeeddown sep pacman-updates system-fan-speed sep xkeyboard
 
-modules-left = kernel sep memory3 sep filesystem sep temperature sep cpu2
-modules-center = cpu
+modules-left = kernel sep memory3 sep filesystem sep temperature sep cpu2 
+modules-center = sep cpu sep
 modules-right = wireless-network sep variety sep backlight sep pavolume sep bluetooth  battery
 
 ;dim-value = 1.0
@@ -570,7 +569,7 @@ format = <ramp-coreload>
 ;   <ramp-load>
 ;   <ramp-coreload>
 ; New in version 3.6.0
-; format-warn = <ramp-coreload>
+format-warn = <ramp-coreload>
 
 ; Available tokens:
 ;   %percentage% (default) - total cpu load averaged over all cores
@@ -590,7 +589,7 @@ label-warn = CPU %percentage%%
 ; Spacing (number of spaces, pixels, points) between individual per-core ramps
 ramp-coreload-spacing = 0
 
-ramp-coreload-0 = ⢻⢕⢩
+ramp-coreload-0 = ⢻⢕⢕
 ramp-coreload-1 = ⢵⣡⣡
 ramp-coreload-2 = ⣉⣡⣞
 ramp-coreload-3 = ⢓⣞⡴
@@ -599,10 +598,9 @@ ramp-coreload-5 = ⢕⣉⡴
 ramp-coreload-6 = ⢝⢩⢌
 ramp-coreload-7 = ⣳⢉⢛
 ramp-coreload-8 = ⡴⢅⢉
-ramp-coreload-9 = ⡼⡶⣐
-ramp-coreload-foreground = #BFBFBF
-
-format-foreground = ${colors.foreground}
+ramp-coreload-9 = ⡼⢕⢩
+ramp-coreload-foreground = #274976
+format-foreground = #1A1A1A
 format-background = ${colors.background}
 click-right = exec xfce4-taskmanager
 
@@ -616,7 +614,7 @@ type = internal/cpu
 interval = 1
 format-foreground = #77BCFF
 format-background = ${colors.background}
-format-prefix = "  "
+format-prefix = "  "
 click-right = exec xfce4-taskmanager
 
 format-prefix-foreground = #888888
@@ -736,7 +734,7 @@ interval = 1
 exec = echo ": "
 format-prefix = "  "
 format-prefix-foreground = #1E90FF
-click-left = exec wal -i /home/asifbe4/Backgrounds
+click-left = exec wal -i /home/asifbe4/Backgrounds -e
 format-foreground = ${colors.foreground}
 format-background = ${colors.background}
 format-underline = #565529
@@ -752,7 +750,7 @@ format-foreground = ${colors.foreground}
 format-background = ${colors.background}
 format-prefix = "    "
 enable-click = true
-click-right = exec xdg-open https://www.kernel.org///?hl=en/
+click-right = exec xfce4-taskmanager &
 click-left = exec urxvt -T 'htop task manager' -e bashtop
 format-prefix-foreground = #2D9BF1
 ;format-overline = #3b3a00
@@ -819,6 +817,20 @@ format-connected-underline = #565529
 
 ############################################################################################################################################################
 
+[module/network-traffic]
+type = custom/script
+exec =  ~/.config/polybar/scripts/network-traffic.sh
+tail = true
+format-prefix = "  "
+format-prefix-foreground = #FFFFFF
+format-underline = #565529
+;format-overline = #3b3a00
+format-foreground = ${colors.foreground}
+format-background = ${colors.background} 
+click-left = exec urxvt -T 'htop task manager' -e htop
+
+############################################################################################################################################################
+
 [module/pavolume]
 type = custom/script
 tail = true
@@ -876,6 +888,19 @@ format-background = ${colors.background}
 
 ############################################################################################################################################################
 
+[module/system-fan-speed]
+type = custom/script
+exec = ~/.config/polybar/scripts/system-fan-speed.sh
+interval = 10
+
+content-foreground = #518EAD
+content-background = ${colors.background}
+format-foreground = ${colors.foreground}
+format-background = ${colors.background}
+#format-underline = #000000
+
+############################################################################################################################################################
+
 [module/temperature]
 ;https://github.com/jaagr/polybar/wiki/Module:-temperature
 type = internal/temperature
@@ -904,11 +929,11 @@ label = %temperature%
 label-warn = %temperature%
 label-warn-foreground = #1A1A1A
 
-ramp-0 = :
-ramp-1 = :
-ramp-2 = :
-ramp-3 = :
-ramp-4 = :
+ramp-0 = :
+ramp-1 = :
+ramp-2 = :
+ramp-3 = :
+ramp-4 = :
 ramp-foreground = #FFBB00
 
 ############################################################################################################################################################
@@ -1008,7 +1033,7 @@ format-connected-prefix-background = ${colors.background}
 format-connected-underline = #565529
 ;format-connected-overline = #3b3a00
 
-label-disconnected = Asifbe4line-0ut
+label-disconnected = Asifbe4live-0ffline
 label-disconnected-foreground = #5FB0FF
 label-disconnected-background = ${colors.background}
 label-connected = %{A1:xfce4-terminal -e nmtui &:} %downspeed:9%%{A} %essid% 
