@@ -34,7 +34,7 @@ format-offset =
 ; Nord theme ============
 background = #EE23262F
 foreground = #B8B8B8
-alert = ${xrdb:color:#222}
+alert = #EEBC13
 volume-min = #a3be8c
 volume-med = #ebcb8b
 volume-max = #bf616a
@@ -83,9 +83,9 @@ module-margin-left = 0
 module-margin-right = 1
 
 font-0 = "Noto Sans:size=9;0"
-font-1 = "FontAwesome:size=9.0"
+font-1 = "FontAwesome:size=10.0"
 font-2 = "Noto Sans Mayan Numerals:size=8;0"
-font-3 = "joypixels:style=Regular:size=13;0"
+font-3 = "joypixels:style=Regular:scale=13;0"
 font-4 = "Nimbus Sans Narrow:style=Regular:size=13;0"
 font-5 = "Cascadia Code:size=13;0"
 font-6 = "Symbols Nerd Font:scale=14;"
@@ -95,7 +95,7 @@ font-7 = "SauceCodePro Nerd Font Mono:scale=13;"
 
 modules-left = jgmenu-wal i3 xwindow sep 
 modules-center =
-modules-right =  sep xweather sep popup-calendar sep jgmenu sep all-updates
+modules-right =  sep xweather sep popup-calendar sep jgmenu sep all-updates sep xkeyboard  
 
 separator = 
 
@@ -188,7 +188,7 @@ module-margin-right = 1
 font-0 = "Noto Sans:size=9;0"
 font-1 = "FontAwesome:size=9.0"
 font-2 = "Noto Sans Mayan Numerals:size=8;0"
-font-3 = "joypixels:style=Regular:size=13;0"
+font-3 = "joypixels:style=Regular:scale=13;0"
 font-4 = "Nimbus Sans Narrow:style=Regular:size=13;0"
 font-5 = "Cascadia Code:size=13;0"
 font-6 = "Symbols Nerd Font:scale=14;"
@@ -302,7 +302,7 @@ fuzzy-match = true
 ;http://fontawesome.io/cheatsheet/
 ;                     ;               
 
-ws-icon-0 = 1;@:
+ws-icon-0 = 1;:
 ws-icon-1 = 2;:
 ws-icon-2 = 3;:
 ws-icon-3 = 4;:
@@ -311,7 +311,7 @@ ws-icon-5 = 6;:
 ws-icon-6 = 7;:
 ws-icon-7 = 8;:
 ws-icon-8 = 9;:
-ws-icon-9 = 10;:
+ws-icon-9 = 10;:@
 ws-icon-default = ""
 
 ; Available tags:
@@ -443,8 +443,8 @@ enable-click = true
 ;   <label> (default)
 ;   <ramp>
 ;   <bar>
-format = <label>
-format-prefix =  "  "
+format = <ramp> <label>
+format-prefix =  ""
 format-prefix-foreground = #FFFFFF
 format-prefix-background = ${colors.background}
 ;format-prefix-overline = #
@@ -461,11 +461,13 @@ format-background = ${colors.background}
 format-underline = #565529
 
 ; Only applies if <ramp> is used
-ramp-0 = 🌕
-ramp-1 = 🌔
-ramp-2 = 🌓
-ramp-3 = 🌒
-ramp-4 = 🌑
+ramp-0 = 
+ramp-1 = 
+ramp-2 = 
+ramp-3 = 
+ramp-4 = 
+ramp-5 = 
+ramp-6 = 
 
 ############################################################################################################################################################
 
@@ -1104,11 +1106,11 @@ format-background = ${colors.background}
 ############################################################################################################################################################
 
 [module/xkeyboard]
-;https://github.com/jaagr/polybar/wiki/Module:-xkeyboard
+;https://github.com/jaagr/polybar/wiki/Module:-xkeyboard 
 type = internal/xkeyboard
 blacklist-0 = num lock
 
-format-prefix = "  "
+format-prefix = "󾓦  "
 format-prefix-foreground = #888888
 format-prefix-background = ${colors.background}
 ;format-overline = #3b3a00
@@ -1155,4 +1157,3 @@ label-maxlen = 180
 ;   None
 label-empty =
 label-empty-foreground = ${colors.background}
-
