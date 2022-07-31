@@ -197,7 +197,7 @@ font-7 = "SauceCodePro Nerd Font Mono:scale=13;"
 ;weather temperature2 filesystem battery wireless-network alsa variety pavolume volume
 ;sep pub-ip load-average sep networkspeedup networkspeeddown sep pacman-updates system-fan-speed sep xkeyboard
 
-modules-left = kernel sep memory3 sep filesystem sep temperature sep cpu2 
+modules-left = kernel sep memory3 sep filesystem nvme-temperature sep temperature sep cpu2 
 modules-center = sep cpu sep
 modules-right = wireless-network sep variety sep backlight sep pavolume sep bluetooth sep battery
 
@@ -909,7 +909,7 @@ type = internal/temperature
 ; To list all the zone types, run
 ; $ for i in /sys/class/thermal/thermal_zone*; do echo "$i: $(<$i/type)"; done
 ; Default: 0
-thermal-zone = 1
+thermal-zone = 0
 
 ; Full path of temperature sysfs path
 ; Use `sensors` to find preferred temperature source, then run
@@ -932,8 +932,9 @@ thermal-zone = 1
 ;system76: GPU temperature /sys/devices/platform/system76/hwmon/hwmon6/temp2_input
 ;iwlwifi_1: temp1 /sys/devices/virtual/thermal/thermal_zone6/hwmon7/temp1_input
 
-hwmon-path =  /sys/devices/virtual/thermal/thermal_zone2/hwmon4/temp1_input
-warn-temperature = 90
+hwmon-path = /sys/devices/virtual/thermal/thermal_zone0/hwmon1/temp1_input
+
+warn-temperature = 85
 format = <ramp> <label>
 format-foreground = ${colors.foreground}
 format-background = ${colors.background}
@@ -950,6 +951,33 @@ ramp-2 = :
 ramp-3 = :
 ramp-4 = :
 ramp-foreground = #FFBB00
+
+############################################################################################################################################################
+
+[module/nvme-temperature]
+;https://github.com/jaagr/polybar/wiki/Module:-temperature
+type = internal/temperature
+thermal-zone = 0
+
+hwmon-path = /sys/devices/pci0000:00/0000:00:1b.0/0000:06:00.0/nvme/nvme0/hwmon3/temp1_input
+
+warn-temperature = 85
+format = <label>
+format-foreground = ${colors.foreground}
+format-background = ${colors.background}
+format-underline = #565529
+format-warn = <label>
+format-warn-underline = #c7254f
+label = %temperature%
+label-warn = %temperature%
+label-warn-foreground = #1A1A1A
+
+ramp-0 = :
+ramp-1 = :
+ramp-2 = :
+ramp-3 = :
+ramp-4 = :
+ramp-foreground = #FFFFFF
 
 ############################################################################################################################################################
 
@@ -1171,3 +1199,4 @@ label-maxlen = 200
 ;   None
 label-empty =
 label-empty-foreground = ${colors.background}
+
