@@ -59,24 +59,25 @@ conky.config = {
 
 };
 conky.text = [[
-${font Ubuntu Condensed:size=13}${color2}${alignc}ASIFBE4LIVE${color3}STUDIOS
-${font Ubuntu Condensed:}${color0}SYSTEM ${color0}${alignr}$sysname$kernel
-${color1}Host:${alignr}${color0}${nodename}${color0}
+${font Ubuntu Condensed:size=16}${color2}${alignc}ASIFBE4LIVE${color3}STUDIOS
+${font Ubuntu Condensed:}${color0}System ${color0}${alignr}$sysname$kernel
+${font Ubuntu Condensed:size=10}${color1}Host:${alignr}${color0}${nodename}${color0}
 ${font Ubuntu Condensed:size=10}${color0}${color1}Uptime: ${color0}${alignr}${uptime}${color0}${alignr}
 ${color0}Load: ${alignr}${loadavg 1}
 -------------------------------------------------------------
-${color0}GPU Mem ${alignr}${color0}${execi 5 nvidia-settings -q [gpu:0]/UsedDedicatedGPUMemory -t} / ${exec nvidia-settings -q [gpu:0]/TotalDedicatedGPUMemory -t} MiB
-${color0}GPU Temp: ${alignr}${color0}${nvidia temp} °C
-${color0}GPU Clock ${alignr}${color0}${nvidia gpufreq} MHz
-${color0}Mem Clock ${alignr}${color0}${nvidia memfreq} MHz
+${font Ubuntu Condensed:}${color0}Nvidia GeForce RTX ${color0}${alignr}2060M
+${font Ubuntu Condensed:size=10}${color0}Gpu Mem ${alignr}${color0}${execi 5 nvidia-settings -q [gpu:0]/UsedDedicatedGPUMemory -t} / ${exec nvidia-settings -q [gpu:0]/TotalDedicatedGPUMemory -t} MiB
+${font Ubuntu Condensed:size=10}${color0}Gpu Temp: ${alignr}${color0}${nvidia temp} °C
+${font Ubuntu Condensed:size=10}${color0}Gpu Clock ${alignr}${color0}${nvidia gpufreq} MHz
+${font Ubuntu Condensed:size=10}${color0}Mem Clock ${alignr}${color0}${nvidia memfreq} MHz
 -------------------------------------------------------------
-${font Ubuntu Condensed:size=10}${color0}CPU ${color5}${alignr} $cpu%
-${color0}CPU Temp: ${color1}${alignr}${execi 10 sensors | grep 'Core 0' | awk {'print $3'}}
-${font Ubuntu Condensed:size=10}${color0}CPU Clock ${color5}${alignr} ${freq_g} Ghz
+${font Ubuntu Condensed:size=10}${color0}Cpu Usage ${color5}${alignr} $cpu%
+${color0}Cpu Temp: ${color1}${alignr}${execi 10 sensors | grep 'Core 0' | awk {'print $3'}}
+${font Ubuntu Condensed:size=10}${color0}Cpu Clock ${color5}${alignr} ${freq_g} Ghz
 -------------------------------------------------------------
-${color0}Nvme:
-${color0} Read ${alignr}${diskio_read}
-${color0} Write ${alignr}${diskio_write}
+${font Ubuntu Condensed:size=10}${color0}Nvme:
+${font Ubuntu Condensed:size=10}${color0} Read ${alignr}${diskio_read}
+${font Ubuntu Condensed:size=10}${color0} Write ${alignr}${diskio_write}
 -------------------------------------------------------------
 ${color0}Processes: ${alignr}${running_processes}/${processes}${color0}
 -------------------------------------------------------------
