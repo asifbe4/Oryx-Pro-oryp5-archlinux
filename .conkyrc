@@ -65,7 +65,7 @@ ${font Ubuntu Condensed:size=10}${color1}Host:${alignr}${color0}${nodename}${col
 ${font Ubuntu Condensed:size=10}${color0}${color1}Uptime: ${color0}${alignr}${uptime}${color0}${alignr}
 ${color0}Load: ${alignr}${loadavg 1}
 -------------------------------------------------------------
-${font Ubuntu Condensed:size=10}GPU: ${alignr}${color0}${exec nvidia-smi --query-gpu=gpu_name --format=csv,noheader,nounits}$color
+${font Ubuntu Condensed:size=10}${color0}GPU: ${alignr}${color0}${exec nvidia-smi --query-gpu=gpu_name --format=csv,noheader,nounits}$color
 ${font Ubuntu Condensed:size=10}${color0}Gpu Mem ${alignr}${color0}${execi 5 nvidia-settings -q [gpu:0]/UsedDedicatedGPUMemory -t} / ${exec nvidia-settings -q [gpu:0]/TotalDedicatedGPUMemory -t} MiB
 ${font Ubuntu Condensed:size=10}${color0}Gpu Temp: ${alignr}${color0}${nvidia temp} °C
 ${font Ubuntu Condensed:size=10}${color0}Gpu Clock ${alignr}${color0}${nvidia gpufreq} MHz
