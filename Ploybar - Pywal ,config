@@ -1,5 +1,5 @@
 ############################################################################################################################################################
-############            POLYBAR July 27, 2022 11:40                          ###############################################################################
+############            POLYBAR August 17, 2022 11:40                          ###############################################################################
 ############################################################################################################################################################
 
 [global/wm]
@@ -11,7 +11,7 @@ margin-bottom = 0
 ;https://github.com/jaagr/polybar/wiki/Configuration#application-settings
 throttle-output = 5
 throttle-output-for = 10
-;throttle-input-for = 30
+throttle-input-for = 30
 screenchange-reload = true
 compositing-background = over
 compositing-foreground = over
@@ -21,24 +21,24 @@ compositing-border = over
 pseudo-transparency = true
 
 ; Define fallback values used by all module formats
-format-foreground = #FF0000
-format-background = #00FF00
+format-foreground = #1A1A1A
+format-background = #664B00
 format-underline = 
 format-overline = 
-format-spacing =
+format-spacing = 
 format-padding =
-format-margin =
+format-margin = 
 format-offset =
 
 [colors]
 ; Nord theme ============
 background = #EE23262F
-foreground = #B8B8B8
-alert = #EEBC13
+foreground = #BFBFBF
+alert = #664B00
 volume-min = #a3be8c
 volume-med = #ebcb8b
 volume-max = #bf616a
-; =======================R
+; =======================
 
 ############################################################################################################################################################
 ############           TOP BAR-  MAINBAR-I3                         ########################################################################################
@@ -54,7 +54,7 @@ override-redirect = false
 bottom = false
 fixed-center = true
 width = 100%
-height = 18
+height = 19
 ;offset-x = 0%
 ;offset-y = 0%
 
@@ -73,7 +73,7 @@ line-color = #f00
 ;border-left-size = 25
 ;border-right-size = 25
 border-top-size = 5
-border-bottom-size = 1
+border-bottom-size = 2
 border-color = ${colors.background}
 
 padding-left = 
@@ -82,18 +82,19 @@ padding-right = 0
 module-margin-left = 0
 module-margin-right = 1
 
-font-0 = "Noto Sans:size=9;0"
+font-0 = "Noto Sans:size=10;0"
 font-1 = "FontAwesome:size=10.0"
-font-2 = "Noto Sans Mayan Numerals:size=12;0"
-font-3 = "joypixels:style=Regular:scale=10;0"
+font-2 = "Noto Sans Mayan Numerals:size=10;0"
+font-3 = "joypixels:style=Regular:scale=11;0"
 font-4 = "Nimbus Sans Narrow:style=Regular:size=13;0"
 font-5 = "Cascadia Code:size=13;0"
-font-6 = "Symbols Nerd Font:scale=14;"
-font-7 = "SauceCodePro Nerd Font Mono:scale=13;"
+font-6 = "Symbols Nerd Font:size=11;"
+font-7 = "Noto Sans Symbols2:size=11;"
+font-8 = "SauceCodePro Nerd Font:size=10;"
 
 ;sep spotify1 sep spotify-prev sep spotify-play-pause sep spotify-next sep
 
-modules-left = jgmenu-wal i3 sep xwindow sep 
+modules-left = kernel sep i3 sep xwindow sep 
 modules-center =
 modules-right =  sep xweather sep popup-calendar sep jgmenu sep all-updates sep xkeyboard  
 
@@ -159,7 +160,7 @@ bottom = true
 fixed-center = true
 
 width = 100%
-height = 18
+height = 19
 ;offset-x = 0%
 ;offset-y = 0%
 
@@ -175,8 +176,8 @@ line-size = 1
 ;border-size = 1
 ;border-left-size = 25
 ;border-right-size = 25
-border-top-size = 4
-border-bottom-size = 3
+border-top-size = 6
+border-bottom-size = 1
 border-color = ${colors.background}
 
 padding-left = 0
@@ -185,20 +186,20 @@ padding-right = 1
 module-margin-left = 1
 module-margin-right = 1
 
-font-0 = "Noto Sans:size=9;0"
-font-1 = "FontAwesome:size=9.0"
-font-2 = "Noto Sans Mayan Numerals:size=9;0"
-font-3 = "joypixels:style=Regular:scale=13;0"
+font-0 = "Noto Sans:size=10;0"
+font-1 = "FontAwesome:size=10.0"
+font-2 = "Noto Sans Mayan Numerals:size=10;0"
+font-3 = "joypixels:style=Regular:scale=11;0"
 font-4 = "Nimbus Sans Narrow:style=Regular:size=13;0"
 font-5 = "Cascadia Code:size=13;0"
 font-6 = "Symbols Nerd Font:size=11;"
 font-7 = "Noto Sans Symbols2:size=11;"
-font-8 = "SauceCodePro Nerd Font:size=9;"
+font-8 = "SauceCodePro Nerd Font:size=10;"
 
 ;weather temperature2 filesystem battery wireless-network alsa variety pavolume volume
 ;sep pub-ip load-average sep networkspeedup networkspeeddown sep pacman-updates system-fan-speed sep xkeyboard
 
-modules-left = kernel sep memory3 sep filesystem nvme-temperature sep cpu2 sep temperature 
+modules-left = jgmenu-wal sep filesystem nvme-temperature sep temperature sep memory3 sep cpu2
 modules-center = sep cpu sep
 modules-right = wireless-network sep variety sep backlight sep pavolume sep bluetooth sep battery
 
@@ -312,7 +313,7 @@ ws-icon-5 = 6;:
 ws-icon-6 = 7;:
 ws-icon-7 = 8;:
 ws-icon-8 = 9;:
-ws-icon-9 = 10;::
+ws-icon-9 = 10;:
 ws-icon-default = ""
 
 ; Available tags:
@@ -374,7 +375,6 @@ format-background = ${colors.background}
 ############                       MODULES A-Z                            ##################################################################################
 ############################################################################################################################################################
 
-
 [module/arch-updates]
 type = custom/script
 exec = ~/.config/polybar/scripts/check-arch-updates.sh
@@ -387,7 +387,7 @@ format-prefix = ": "
 format-prefix-foreground = #518EAD
 format-underline = #565529
 
-######
+###################
 
 [module/aur-updates]
 type = custom/script
@@ -403,7 +403,7 @@ click-left = exec xfce4-terminal &
 format-prefix-foreground = #518EAD
 format-underline = #565529
 
-######
+###################
 
 [module/all-updates]
 type = custom/script
@@ -533,20 +533,6 @@ format-underline = #565529
 
 ############################################################################################################################################################
 
-[module/popup-calendar]
-type = custom/script
-exec = ~/.config/polybar/scripts/popup-calendar.sh
-interval = 5
-format-prefix = "  "
-format-prefix-foreground = #FFBB00
-format-prefix-underline = #565529
-format-foreground = ${colors.foreground}
-format-background = ${colors.background}
-label-underline= #565529
-click-left = ~/.config/polybar/scripts/popup-calendar.sh --popup &
-
-############################################################################################################################################################
-
 [module/cpu]
 type = internal/cpu
 
@@ -556,7 +542,7 @@ interval = 1
 
 ; Default: 80
 ; New in version 3.6.0
-warn-percentage = 85
+warn-percentage = 90
 ; Available tags:
 ;   <label> (default)
 ;   <bar-load>
@@ -592,16 +578,15 @@ label-warn = CPU %percentage%%
 ; Spacing (number of spaces, pixels, points) between individual per-core ramps
 ramp-coreload-spacing = 0
 
-ramp-coreload-0 = ⢻
-ramp-coreload-1 = ⢵
-ramp-coreload-2 = ⣉
-ramp-coreload-3 = ⢓
-ramp-coreload-4 = ⡷
-ramp-coreload-5 = ⢕
-ramp-coreload-foreground = #1E90FF
-format-foreground = #1A1A1A
+ramp-coreload-0 = 𝍠 
+ramp-coreload-1 = 𝍥
+ramp-coreload-2 = 𝍦
+ramp-coreload-3 = 𝍧
+ramp-coreload-4 = 𝍨
+ramp-coreload-5 = 𝍭
+ramp-coreload-foreground = #7F7F7F
+format-underline = #1A1A1A
 format-background = ${colors.background}
-click-right = exec xfce4-taskmanager
 
 ############################################################################################################################################################
 
@@ -611,22 +596,20 @@ type = internal/cpu
 ; Seconds to sleep between updates
 ; Default: 1
 interval = 1
-format-foreground = #77BCFF
+format-foreground = ${colors.foreground}
 format-background = ${colors.background}
-format-prefix = "  "
-click-right = exec xfce4-taskmanager
-
-format-prefix-foreground = #888888
+format-prefix = "   :  "
+format-prefix-foreground = #1E90FF
 format-underline = #565529
 ;format-overline = #3b3a00
-label-font = 0
+label-font = 3
 
 ; Available tags:
 ;   <label> (default)
 ;   <bar-load>
 ;   <ramp-load>
 ;   <ramp-coreload>
-format = <label>
+format = <label> 
 
 format-padding = 0
 
@@ -634,7 +617,7 @@ format-padding = 0
 ;   %percentage% (default) - total cpu load
 ;   %percentage-cores% - load percentage for each core
 ;   %percentage-core[1-9]% - load percentage for specific core
-label = Cpu: %percentage%
+label = Cpu: %percentage% 
 
 ############################################################################################################################################################
 
@@ -684,7 +667,7 @@ spacing = 2
 ;   <ramp-capacity>
 format-mounted = <label-mounted>
 
-format-mounted-prefix = "  "
+format-mounted-prefix = "   "
 format-mounted-prefix-foreground = #FFFFFF
 format-mounted-foreground = ${colors.foreground}
 format-mounted-background = ${colors.background}
@@ -724,12 +707,13 @@ format-foreground = ${colors.foreground}
 format-background = ${colors.background}
 format-underline = #565529
 
+###################
 
 [module/jgmenu-wal]
 type = custom/script
 interval = 1
-exec = echo ":"
-format-prefix = "  "
+exec = echo ": Pi"
+format-prefix = "   "
 format-prefix-foreground = #1E90FF
 click-left = exec wal -i /home/asifbe4/Backgrounds -e
 format-foreground = ${colors.foreground}
@@ -745,7 +729,7 @@ tail = false
 interval = 1024
 format-foreground = ${colors.foreground}
 format-background = ${colors.background}
-format-prefix = "   "
+format-prefix = " :  "
 enable-click = true
 click-right = exec xfce4-taskmanager &
 click-left = exec urxvt -T 'htop task manager' -e bashtop
@@ -770,7 +754,7 @@ interval = 1
 ;   %mb_total%
 label = %mb_used%
 format = <label>
-format-prefix = "  "
+format-prefix = ":  "
 format-prefix-foreground = #FFFFFF
 format-underline = #565529
 ;format-overline = #3b3a00
@@ -841,6 +825,20 @@ format-underline = #565529
 ;format-overline = #3b3a00
 format-foreground = ${colors.foreground}
 format-background = ${colors.background}
+
+############################################################################################################################################################
+
+[module/popup-calendar]
+type = custom/script
+exec = ~/.config/polybar/scripts/popup-calendar.sh
+interval = 5
+format-prefix = "  "
+format-prefix-foreground = #518EAD
+format-prefix-underline = #565529
+format-foreground = ${colors.foreground}
+format-background = ${colors.background}
+label-underline= #565529
+click-left = ~/.config/polybar/scripts/popup-calendar.sh --popup &
 
 ############################################################################################################################################################
 
@@ -929,21 +927,21 @@ thermal-zone = 0
 
 hwmon-path = /sys/devices/virtual/thermal/thermal_zone0/hwmon1/temp1_input
 
-warn-temperature = 85
+warn-temperature = 90
 format = <ramp> <label>
 format-foreground = ${colors.foreground}
 format-background = ${colors.background}
 format-underline = #565529
 format-warn = <ramp> <label>
-format-warn-underline = #000000
-label = %temperature%
+format-warn-underline = #FFFF00
+label = :  %temperature% 
 label-warn =  %temperature%
-label-warn-foreground = #FFFFFF
+label-warn-foreground = #000000
 
-ramp-0 = 𝍥   
-ramp-1 = 𝍦   
-ramp-2 = 𝍧   
-ramp-3 = 𝍨   
+ramp-0 = 𝍥    
+ramp-1 = 𝍦    
+ramp-2 = 𝍧    
+ramp-3 = 𝍨     
 ramp-4 = 𝍤   
 ramp-foreground = #FFBB00
 
@@ -956,22 +954,22 @@ thermal-zone = 0
 
 hwmon-path = /sys/devices/pci0000:00/0000:00:1b.0/0000:06:00.0/nvme/nvme0/hwmon3/temp1_input
 
-warn-temperature = 50
+warn-temperature = 90
 format = /  <ramp> <label>
 format-foreground = #FFFFFF
 format-background = ${colors.background}
 format-underline = #565529
 format-warn = <label>
 format-warn-underline = #FFBB00
-label = %temperature%
-label-warn = %temperature%
-label-warn-foreground = #FFBB00
+label = :  %temperature%
+label-warn = %temperature%
+label-warn-foreground = #000000
 
 ramp-0 = 𝍥  
 ramp-1 = 𝍦  
 ramp-2 = 𝍧  
 ramp-3 = 𝍨  
-ramp-4 = 𝍤  
+ramp-4 = 𝍤 
 ramp-foreground = #FFFFFF
 
 ############################################################################################################################################################
@@ -989,35 +987,6 @@ format-prefix-foreground = #888888
 #format-underline = #565529
 format-overline = #3b3a00
 click-left = exec xfce4-terminal -e "htop" &
-
-############################################################################################################################################################
-
-[module/xweather]
-type = custom/script
-interval = 10
-format = <label>
-format-prefix = " "
-format-prefix-foreground = #518EAD
-format-underline = #565529
-format-foreground = ${colors.foreground}
-format-background = ${colors.background}
-exec = curl -Ss 'https://wttr.in?0&T&Q' | cut -c 16- | head -2 | xargs echo
-tail = true
-click-left = exec kweather
-#click-left = gapplication launch org.gnome.Weather & 
-
-[module/weather]
-type = custom/script
-interval = 10
-format = <label>
-format-prefix = "   "
-format-prefix-foreground = #518EAD
-format-underline = #565529
-format-foreground = ${colors.foreground}
-format-background = ${colors.background}
-exec = python -u ~/.config/polybar/scripts/weather.py
-tail = true
-click-left = gapplication launch org.gnome.Weather & 
 
 ############################################################################################################################################################
 
@@ -1058,33 +1027,31 @@ label-disconnected-foreground = ${colors.foreground}
 ;https://github.com/jaagr/polybar/wiki/Module:-network
 type = internal/network
 interface = wlp0s20f3
-;interface = enp0s20f0u4
 interval = 3.0
 
 format-connected = <ramp-signal> <label-connected>
 ;format-connected = <label-connected>
 format-connected-foreground = ${colors.foreground}
 format-connected-background = ${colors.background}
-;format-connected-prefix = " "
+;format-connected-prefix = "  "
+format-connected-underline = #565529
 
 format-connected-prefix-foreground = #518EAD
 format-connected-prefix-background = ${colors.background}
-format-connected-underline = #565529
-;format-connected-overline = #3b3a00
 
+label-connected = %{A1:xfce4-terminal -e nmtui &:} %downspeed:9%%{A} %essid% 
+;label-connected = %{A1:xfce4-terminal -e nmtui &:}%downspeed:9% 
 label-disconnected = Asifbe4live-0ffline
 label-disconnected-foreground = #5FB0FF
 label-disconnected-background = ${colors.background}
-;label-connected = %{A1:xfce4-terminal -e nmtui &:} %downspeed:9%%{A} %essid% 
-label-connected = %{A1:xfce4-terminal -e nmtui &:}%downspeed:9% 
-format-disconnected = <label-disconnected>
-format-disconnected-foreground = ${colors.alert}
+
+;format-disconnected = <label-disconnected>
+;format-disconnected-foreground = ${colors.alert}
 format-disconnected-background = ${colors.background}
-format-disconnected-prefix = "  "
-format-disconnected-prefix-foreground = ${colors.foreground}
+format-disconnected-prefix = "    "
+format-disconnected-prefix-foreground = #4D4D4D
 format-disconnected-prefix-background = ${colors.background}
-;format-disconnected-overline = #50518EAD
-format-disconnected-underline = #565529
+format-disconnected-prefix-underline = #4D4D4D
 
 ramp-signal-0 = ⡯
 ramp-signal-1 = ⢽
@@ -1156,12 +1123,41 @@ format-underline= #565529
 format-foreground = ${colors.foreground}
 format-background = ${colors.background}
 
-label-layout = %name%
+label-layout = %name% 
 #label-layout-underline = #FFFFFF
 label-indicator-padding = 2
-label-indicator-margin = 1
+label-indicator-margin = 2
 label-indicator-background = ${colors.background}
 label-indicator-underline = ${colors.foreground
+
+############################################################################################################################################################
+
+[module/xweather]
+type = custom/script
+interval = 10
+format = <label>
+format-prefix = " "
+format-prefix-foreground = #FFBB00
+format-underline = #565529
+format-foreground = ${colors.foreground}
+format-background = ${colors.background}
+exec = curl -Ss 'https://wttr.in?0&T&Q' | cut -c 16- | head -2 | xargs echo
+tail = true
+click-left = exec kweather
+#click-left = gapplication launch org.gnome.Weather & 
+
+[module/weather]
+type = custom/script
+interval = 10
+format = <label>
+format-prefix = "   "
+format-prefix-foreground = #FFBB00
+format-underline = #565529
+format-foreground = ${colors.foreground}
+format-background = ${colors.background}
+exec = python -u ~/.config/polybar/scripts/weather.py
+tail = true
+click-left = gapplication launch org.gnome.Weather &  
 
 ############################################################################################################################################################
 
@@ -1187,7 +1183,7 @@ format-padding =
 ;   %title%
 ; Default: %title%
 label = %title% 
-label-maxlen = 200
+label-maxlen = 150
 
 ; Used instead of label when there is no window title
 ; Available tokens:
