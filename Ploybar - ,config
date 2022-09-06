@@ -55,7 +55,7 @@ override-redirect = false
 bottom = false
 fixed-center = true
 width = 100%
-height = 19
+height = 17
 ;offset-x = 0%
 ;offset-y = 0%
 
@@ -73,8 +73,8 @@ line-color = #f00
 ;border-size = 0
 ;border-left-size = 25
 ;border-right-size = 25
-border-top-size = 5
-border-bottom-size = 2
+border-top-size = 3
+border-bottom-size = 1
 border-color = ${colors.background}
 
 padding-left = 
@@ -83,21 +83,21 @@ padding-right = 0
 module-margin-left = 0
 module-margin-right = 1
 
-font-0 = "Noto Sans:size=10;0"
-font-1 = "FontAwesome:size=10.0"
+font-0 = "Noto Sans:size=9;0"
+font-1 = "FontAwesome:size=9.0"
 font-2 = "Noto Sans Mayan Numerals:size=10;0"
-font-3 = "joypixels:style=Regular:scale=11;0"
-font-4 = "Nimbus Sans Narrow:style=Regular:size=13;0"
-font-5 = "Cascadia Code:size=13;0"
-font-6 = "Symbols Nerd Font:size=11;"
-font-7 = "Noto Sans Symbols2:size=11;"
-font-8 = "SauceCodePro Nerd Font:size=10;"
+font-3 = "joypixels:style=Regular:scale=10;0"
+font-4 = "Nimbus Sans Narrow:style=Regular:size=9;0"
+font-5 = "Cascadia Code:size=9;0"
+font-6 = "Symbols Nerd Font:size=10;"
+font-7 = "Noto Sans Symbols2:size=9;"
+font-8 = "SauceCodePro Nerd Font:size=9;"
 
 ;sep spotify1 sep spotify-prev sep spotify-play-pause sep spotify-next sep
 
 modules-left = kernel sep i3 sep xwindow sep 
 modules-center =
-modules-right =  sep xweather sep popup-calendar sep jgmenu sep all-updates sep xkeyboard  
+modules-right = sep xweather sep popup-calendar sep jgmenu sep all-updates sep xkeyboard  
 
 separator = 
 
@@ -161,7 +161,7 @@ bottom = true
 fixed-center = true
 
 width = 100%
-height = 19
+height = 17
 ;offset-x = 0%
 ;offset-y = 0%
 
@@ -178,7 +178,7 @@ line-size = 1
 ;border-left-size = 25
 ;border-right-size = 25
 border-top-size = 4
-border-bottom-size = 2
+border-bottom-size = 1
 border-color = ${colors.background}
 
 padding-left = 0
@@ -187,15 +187,15 @@ padding-right = 1
 module-margin-left = 1
 module-margin-right = 1
 
-font-0 = "Noto Sans:size=10;0"
-font-1 = "FontAwesome:size=10.0"
+font-0 = "Noto Sans:size=9;0"
+font-1 = "FontAwesome:size=9.0"
 font-2 = "Noto Sans Mayan Numerals:size=10;0"
-font-3 = "joypixels:style=Regular:scale=11;0"
-font-4 = "Nimbus Sans Narrow:style=Regular:size=13;0"
-font-5 = "Cascadia Code:size=13;0"
-font-6 = "Symbols Nerd Font:size=11;"
-font-7 = "Noto Sans Symbols2:size=11;"
-font-8 = "SauceCodePro Nerd Font:size=10;"
+font-3 = "joypixels:style=Regular:scale=10;0"
+font-4 = "Nimbus Sans Narrow:style=Regular:size=9;0"
+font-5 = "Cascadia Code:size=9;0"
+font-6 = "Symbols Nerd Font:size=10;"
+font-7 = "Noto Sans Symbols2:size=9;"
+font-8 = "SauceCodePro Nerd Font:size=9;"
 
 ;weather temperature2 filesystem battery wireless-network 
 ;alsa variety pavolume volume cpu-coreload cup network-traffic
@@ -269,7 +269,7 @@ type = internal/i3
 screenchange-reload = true
 
 ; Default: false
-pin-workspaces = false
+pin-workspaces =true
 
 ; This will split the workspace name on ':'
 ; Default: false
@@ -290,7 +290,7 @@ enable-scroll = true
 
 ; Wrap around when reaching the first/last workspace
 ; Default: true
-wrapping-scroll = false
+wrapping-scroll = true
 
 ; Set the scroll cycle direction
 ; Default: true
@@ -307,17 +307,17 @@ fuzzy-match = true
 ;http://fontawesome.io/cheatsheet/
 ;                     ;               
 
-ws-icon-0 = 1;慎:
-ws-icon-1 = 2;:
-ws-icon-2 = 3;:
-ws-icon-3 = 4;:
-ws-icon-4 = 5;:
-ws-icon-5 = 6;:
-ws-icon-6 = 7;:
-ws-icon-7 = 8;:
-ws-icon-8 = 9;:
-ws-icon-9 = 10;:
-ws-icon-default = ""
+ws-icon-0 = 1;慎 :
+ws-icon-1 = 2; :
+ws-icon-2 = 3; :
+ws-icon-3 = 4; :
+ws-icon-4 = 5; :
+ws-icon-5 = 6; :
+ws-icon-6 = 7; :
+ws-icon-7 = 8; :
+ws-icon-8 = 9; :
+ws-icon-9 = 10; :
+ws-icon-default = ": "
 
 ; Available tags:
 ;   <label-state> (default) - gets replaced with <label-(focused|unfocused|visible|urgent)>
@@ -416,7 +416,7 @@ label =  %output%
 label-foreground = #FFFFFF
 format-foreground = ${colors.foreground}
 format-background = ${colors.background}
-format-prefix = ":  "
+format-prefix = " :   "
 click-left = exec alacritty &
 format-prefix-foreground = #518EAD
 format-underline = #565529
@@ -635,7 +635,7 @@ date = " %Y-%m-%d%"
 date-alt = " %d-%m-%Y"
 time = %H:%M
 time-alt = %H:%M
-format-prefix = " "
+format-prefix = " : "
 format-prefix-foreground = #888888
 format-prefix-underline = #565529
 format-foreground = ${colors.foreground}
@@ -670,7 +670,7 @@ spacing = 2
 ;   <ramp-capacity>
 format-mounted = <label-mounted>
 
-format-mounted-prefix = "   "
+format-mounted-prefix = " : "
 format-mounted-prefix-foreground = #FFFFFF
 format-mounted-foreground = ${colors.foreground}
 format-mounted-background = ${colors.background}
@@ -687,7 +687,7 @@ format-mounted-underline = #565529
 ;   %free%
 ;   %used%
 ; Default: %mountpoint% %percentage_free%%
-label-mounted = %mountpoint% : %used%  %free%
+label-mounted = %mountpoint%  %used%  %free%
 
 ; Available tokens:
 ;   %mountpoint%
@@ -703,7 +703,7 @@ format-unmounted-underline = ${colors.alert}
 type = custom/script
 interval = 1204
 exec = echo "Metaphor"
-format-prefix = "  "
+format-prefix = " :  "
 format-prefix-foreground = #FFFFFF
 click-left = exec /usr/bin/brave %U https://www.pandora.com/station/play/411001759508769445
 format-foreground = ${colors.foreground}
@@ -732,7 +732,7 @@ tail = false
 interval = 1024
 format-foreground = ${colors.foreground}
 format-background = ${colors.background}
-format-prefix = " :  "
+format-prefix = "  : "
 enable-click = true
 click-right = exec xfce4-taskmanager &
 click-left = exec urxvt -T 'htop task manager' -e bashtop
@@ -755,7 +755,7 @@ interval = 1
 ;   %mb_used%
 ;   %mb_free%
 ;   %mb_total%
-label = %gb_used% %percentage_used%%
+label = %gb_used% - %gb_free%
 format = <label>
 format-prefix = " :  "
 format-prefix-foreground = #FFFFFF
@@ -821,7 +821,7 @@ format-background = ${colors.background}
 type = custom/script
 exec = ~/.config/polybar/scripts/popup-calendar.sh
 interval = 5
-format-prefix = "  "
+format-prefix = " :  "
 format-prefix-foreground = #518EAD
 format-prefix-underline = #565529
 format-foreground = ${colors.foreground}
@@ -840,7 +840,7 @@ format-background = ${colors.background}
 format-underline = #565529
 ;format-overline = #3b3a00
 label = %output%
-format-prefix = "  "
+format-prefix = " : "
 format-prefix-foreground = #888888
 
 ############################################################################################################################################################
@@ -854,7 +854,7 @@ interval = 6000
 click-left = exec xfce4-terminal -e "htop" &
 format-foreground = ${colors.foreground}
 format-background = ${colors.background}
-format-prefix = "  "
+format-prefix = ":  "
 format-prefix-foreground = #518EAD
 format-overline = #3b3a00
 
@@ -862,7 +862,7 @@ format-overline = #3b3a00
 
 [module/sep]
 type = custom/text
-content = "|"
+content = " "
 content-foreground = ${colors.sep}
 content-background = ${colors.background}
 ;content-underline = #000000
@@ -888,25 +888,7 @@ thermal-zone = 0
 ; to find path to desired file
 ; Default reverts to thermal zone setting
 
-;acpitz: temp1 /sys/devices/virtual/thermal/thermal_zone0/hwmon1/temp1_input
-;nvme: Composite /sys/devices/pci0000:00/0000:00:1d.0/0000:07:00.0/nvme/nvme1/hwmon3/temp1_input
-;nvme: Sensor 1 /sys/devices/pci0000:00/0000:00:1d.0/0000:07:00.0/nvme/nvme1/hwmon3/temp2_input
-;nvme: Sensor 2 /sys/devices/pci0000:00/0000:00:1d.0/0000:07:00.0/nvme/nvme1/hwmon3/temp3_input
-;nvme: Composite /sys/devices/pci0000:00/0000:00:1b.0/0000:06:00.0/nvme/nvme0/hwmon4/temp1_input
-;nvme: Sensor 1 /sys/devices/pci0000:00/0000:00:1b.0/0000:06:00.0/nvme/nvme0/hwmon4/temp2_input
-;pch_cannonlake: temp1 /sys/devices/virtual/thermal/thermal_zone1/hwmon5/temp1_input
-;system76: CPU temperature /sys/devices/platform/system76/hwmon/hwmon6/temp1_input
-;system76: GPU temperature /sys/devices/platform/system76/hwmon/hwmon6/temp2_input
-;coretemp: Package id 0 /sys/devices/platform/coretemp.0/hwmon/hwmon7/temp1_input
-;coretemp: Core 0 /sys/devices/platform/coretemp.0/hwmon/hwmon7/temp2_input
-;coretemp: Core 1 /sys/devices/platform/coretemp.0/hwmon/hwmon7/temp3_input
-;coretemp: Core 2 /sys/devices/platform/coretemp.0/hwmon/hwmon7/temp4_input
-;coretemp: Core 3 /sys/devices/platform/coretemp.0/hwmon/hwmon7/temp5_input
-;coretemp: Core 4 /sys/devices/platform/coretemp.0/hwmon/hwmon7/temp6_input
-;coretemp: Core 5 /sys/devices/platform/coretemp.0/hwmon/hwmon7/temp7_input
-;iwlwifi_1: temp1 /sys/devices/virtual/thermal/thermal_zone6/hwmon8/temp1_input
-
-hwmon-path = /sys/devices/platform/system76/hwmon/hwmon6/temp1_input
+hwmon-path = /sys/devices/virtual/thermal/thermal_zone2/hwmon5/temp1_input
 
 warn-temperature = 90
 format = <ramp> <label>
@@ -933,16 +915,9 @@ ramp-foreground = #FFBB00
 type = internal/temperature
 ; Default: 0
 thermal-zone = 0
-
-;nvme: Composite /sys/devices/pci0000:00/0000:00:1d.0/0000:07:00.0/nvme/nvme1/hwmon3/temp1_input
-;nvme: Sensor 1 /sys/devices/pci0000:00/0000:00:1d.0/0000:07:00.0/nvme/nvme1/hwmon3/temp2_input
-;nvme: Sensor 2 /sys/devices/pci0000:00/0000:00:1d.0/0000:07:00.0/nvme/nvme1/hwmon3/temp3_input
-;nvme: Composite /sys/devices/pci0000:00/0000:00:1b.0/0000:06:00.0/nvme/nvme0/hwmon4/temp1_input
-;nvme: Sensor 1 /sys/devices/pci0000:00/0000:00:1b.0/0000:06:00.0/nvme/nvme0/hwmon4/temp2_input
-
 hwmon-path = /sys/devices/pci0000:00/0000:00:1b.0/0000:06:00.0/nvme/nvme0/hwmon4/temp1_input
 
-warn-temperature = 90
+warn-temperature = 50
 format = <ramp> <label>
 format-foreground = ${colors.foreground}
 format-background = ${colors.background}
@@ -1060,7 +1035,7 @@ interval = 1
 tail = true
 format-foreground = ${colors.foreground}
 format-background = ${colors.background}
-format-prefix = "  "
+format-prefix = " :  "
 format-prefix-foreground = #FFBB00
 format-underline = #565529
 ;format-overline = #3b3a00
@@ -1075,7 +1050,7 @@ click-left = variety --selector
 type = internal/xkeyboard
 blacklist-0 = num lock
 
-format-prefix = "󾓦  "
+format-prefix = "󾓦 : "
 format-prefix-foreground = #888888
 format-prefix-background = ${colors.background}
 ;format-overline = #3b3a00
@@ -1097,7 +1072,7 @@ label-indicator-underline = ${colors.foreground
 type = custom/script
 interval = 10
 format = <label>
-format-prefix = "虜  "
+format-prefix = "虜 :  "
 format-prefix-foreground = #FFBB00
 format-underline = #565529
 format-foreground = ${colors.foreground}
