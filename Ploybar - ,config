@@ -32,7 +32,7 @@ format-offset =
 
 [colors]
 ; Nord theme ============
-background = #EE23262F
+background = #DD101421
 foreground = #BFBFBF
 alert = #664B00
 volume-min = #a3be8c
@@ -97,7 +97,7 @@ font-8 = "SauceCodePro Nerd Font:size=9;"
 
 modules-left = kernel sep i3 sep xwindow sep 
 modules-center =
-modules-right = sep xweather sep popup-calendar sep jgmenu sep all-updates sep xkeyboard  
+modules-right = sep weather sep popup-calendar sep jgmenu sep all-updates sep xkeyboard  
 
 separator = 
 
@@ -202,9 +202,9 @@ font-8 = "SauceCodePro Nerd Font:size=9;"
 ;sep pub-ip load-average networkspeedup networkspeeddown 
 ;pacman-updates system-fan-speed xkeyboard uptime
 
-modules-left = jgmenu-wal sep filesystem sep nvme0 sep memory sep temperature sep cpu sep
+modules-left =  filesystem sep nvme0 sep memory sep temperature sep cpu sep
 modules-center = sep cpu-coreload sep
-modules-right = wireless-network sep variety sep backlight sep pavolume sep bluetooth sep battery sep uptime
+modules-right = wireless-network sep variety sep backlight jgmenu-wal sep pavolume sep bluetooth sep battery sep uptime
 
 ;dim-value = 1.0
 
@@ -381,7 +381,7 @@ format-background = ${colors.background}
 [module/arch-updates]
 type = custom/script
 exec = ~/.config/polybar/scripts/check-arch-updates.sh
-interval = 1000
+interval = 12000
 label = %output%
 label-foreground = #FFFFFF
 format-foreground = ${colors.foreground}
@@ -395,7 +395,7 @@ format-underline = #565529
 [module/aur-updates]
 type = custom/script
 exec = ~/.config/polybar/scripts/check-aur-updates.sh
-interval = 1000
+interval = 12000
 label = %output%
 label-foreground = #FFFFFF
 format-foreground = ${colors.foreground}
@@ -411,12 +411,12 @@ format-underline = #565529
 [module/all-updates]
 type = custom/script
 exec = ~/.config/polybar/scripts/check-all-updates.sh
-interval = 1000
+interval = 120000
 label =  %output%
 label-foreground = #FFFFFF
 format-foreground = ${colors.foreground}
 format-background = ${colors.background}
-format-prefix = " :   "
+format-prefix = " :  "
 click-left = exec alacritty &
 format-prefix-foreground = #518EAD
 format-underline = #565529
@@ -670,8 +670,8 @@ spacing = 2
 ;   <ramp-capacity>
 format-mounted = <label-mounted>
 
-format-mounted-prefix = " : "
-format-mounted-prefix-foreground = #FFFFFF
+format-mounted-prefix = "   : "
+format-mounted-prefix-foreground = #FFBB00
 format-mounted-foreground = ${colors.foreground}
 format-mounted-background = ${colors.background}
 ;format-mounted-overline = #3b3a00
@@ -888,7 +888,7 @@ thermal-zone = 0
 ; to find path to desired file
 ; Default reverts to thermal zone setting
 
-hwmon-path = /sys/devices/virtual/thermal/thermal_zone2/hwmon5/temp1_input
+hwmon-path = /sys/devices/platform/system76/hwmon/hwmon6/temp1_input
 
 warn-temperature = 90
 format = <ramp> <label>
@@ -945,12 +945,12 @@ interval = 100
 label = %output%
 format-foreground = ${colors.foreground}
 format-background = ${colors.background}
-format-prefix = " : "
+format-prefix = " :  "
 format-prefix-foreground = #888888
 #format-underline = #565529
 format-overline = #3b3a00
-click-left = exec urxvt -e "ranger" &
-click-right = exec xfce4-terminal -e "htop" &
+click-left = exec alacritty -e "ranger" &
+click-right = exec alacritty -e "bashtop" &
 
 ############################################################################################################################################################
 
@@ -1050,7 +1050,7 @@ click-left = variety --selector
 type = internal/xkeyboard
 blacklist-0 = num lock
 
-format-prefix = "󾓦 : "
+format-prefix = "󾓦 :  "
 format-prefix-foreground = #888888
 format-prefix-background = ${colors.background}
 ;format-overline = #3b3a00
@@ -1067,6 +1067,22 @@ label-indicator-background = ${colors.background}
 label-indicator-underline = ${colors.foreground
 
 ############################################################################################################################################################
+
+[module/weather]
+type = custom/script
+interval = 10
+format = <label>
+format-prefix = "虜 :  "
+format-prefix-foreground = #FFBB00
+format-underline = #565529
+format-foreground = ${colors.foreground}
+format-background = ${colors.background}
+exec = python -u ~/.config/polybar/scripts/weather.py
+tail = true
+click-left = exec kweather
+#click-left = gapplication launch org.gnome.Weather & 
+
+###################
 
 [module/xweather]
 type = custom/script
