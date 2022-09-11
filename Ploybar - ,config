@@ -97,7 +97,7 @@ font-8 = "SauceCodePro Nerd Font:size=9;"
 
 modules-left = kernel sep i3 sep xwindow sep 
 modules-center =
-modules-right = sep weather sep popup-calendar sep jgmenu sep all-updates sep xkeyboard  
+modules-right = sep xweather sep popup-calendar sep jgmenu sep all-updates sep xkeyboard  
 
 separator = 
 
@@ -387,7 +387,7 @@ label-foreground = #FFFFFF
 format-foreground = ${colors.foreground}
 format-background = ${colors.background}
 format-prefix = ": "
-format-prefix-foreground = #518EAD
+format-prefix-foreground = #1E90FF
 format-underline = #565529
 
 ###################
@@ -403,7 +403,7 @@ format-background = ${colors.background}
 format-prefix = ": "
 click-right = exec xfce4-power-manager &
 click-left = exec xfce4-terminal &
-format-prefix-foreground = #518EAD
+format-prefix-foreground = #1E90FF
 format-underline = #565529
 
 ###################
@@ -418,7 +418,7 @@ format-foreground = ${colors.foreground}
 format-background = ${colors.background}
 format-prefix = " :  "
 click-left = exec alacritty &
-format-prefix-foreground = #518EAD
+format-prefix-foreground = #1E90FF
 format-underline = #565529
 
 ############################################################################################################################################################
@@ -497,7 +497,7 @@ format-discharging-background = ${colors.background}
 format-discharging-unliderline = #3b3a00
 
 format-full-prefix = "  "
-format-full-prefix-foreground = #518EAD
+format-full-prefix-foreground = #1E90FF
 format-full-foreground = ${colors.foreground}
 format-full-background = ${colors.background}
 ;format-full-overline = #3b3a00
@@ -736,7 +736,7 @@ format-prefix = "  : "
 enable-click = true
 click-right = exec xfce4-taskmanager &
 click-left = exec urxvt -T 'htop task manager' -e bashtop
-format-prefix-foreground = #2D9BF1
+format-prefix-foreground = #1E90FF
 ;format-overline = #3b3a00
 format-underline = #565529
 
@@ -822,7 +822,7 @@ type = custom/script
 exec = ~/.config/polybar/scripts/popup-calendar.sh
 interval = 5
 format-prefix = " :  "
-format-prefix-foreground = #518EAD
+format-prefix-foreground = #1E90FF
 format-prefix-underline = #565529
 format-foreground = ${colors.foreground}
 format-background = ${colors.background}
@@ -855,7 +855,7 @@ click-left = exec xfce4-terminal -e "htop" &
 format-foreground = ${colors.foreground}
 format-background = ${colors.background}
 format-prefix = ":  "
-format-prefix-foreground = #518EAD
+format-prefix-foreground = #1E90FF
 format-overline = #3b3a00
 
 ############################################################################################################################################################
@@ -1000,7 +1000,7 @@ format-connected = <ramp-signal> <label-connected>
 format-connected-foreground = ${colors.foreground}
 format-connected-background = ${colors.background}
 format-connected-underline = #565529
-format-connected-prefix-foreground = #518EAD
+format-connected-prefix-foreground = #1E90FF
 format-connected-prefix-background = ${colors.background}
 
 label-disconnected = Offline
