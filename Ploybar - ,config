@@ -77,10 +77,10 @@ border-top-size = 3
 border-bottom-size = 1
 border-color = ${colors.background}
 
-padding-left = 
-padding-right = 0
+padding-left = 1
+padding-right = 1
 
-module-margin-left = 0
+module-margin-left = 1
 module-margin-right = 1
 
 font-0 = "Noto Sans:size=9;0"
@@ -181,7 +181,7 @@ border-top-size = 4
 border-bottom-size = 1
 border-color = ${colors.background}
 
-padding-left = 0
+padding-left = 1
 padding-right = 1
 
 module-margin-left = 1
@@ -211,7 +211,7 @@ modules-right = wireless-network sep variety sep backlight jgmenu-wal sep pavolu
 tray-detached = false
 tray-offset-x = 0
 tray-offset-y = 0
-tray-padding = 4
+tray-padding = 6
 tray-maxsize = 18
 tray-scale = 1.0
 tray-position = right
@@ -888,7 +888,7 @@ thermal-zone = 0
 ; to find path to desired file
 ; Default reverts to thermal zone setting
 
-hwmon-path = /sys/devices/platform/system76/hwmon/hwmon6/temp1_input
+hwmon-path = /sys/devices/platform/system76/hwmon/hwmon7/temp1_input
 
 warn-temperature = 90
 format = <ramp> <label>
@@ -915,9 +915,9 @@ ramp-foreground = #FFBB00
 type = internal/temperature
 ; Default: 0
 thermal-zone = 0
-hwmon-path = /sys/devices/pci0000:00/0000:00:1b.0/0000:06:00.0/nvme/nvme0/hwmon4/temp1_input
+hwmon-path = /sys/devices/pci0000:00/0000:00:1b.0/0000:06:00.0/nvme/nvme0/hwmon3/temp1_input
 
-warn-temperature = 50
+warn-temperature = 60
 format = <ramp> <label>
 format-foreground = ${colors.foreground}
 format-background = ${colors.background}
