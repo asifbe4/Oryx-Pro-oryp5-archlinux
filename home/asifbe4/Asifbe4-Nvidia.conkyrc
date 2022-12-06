@@ -1,7 +1,7 @@
 conky.config = {
 -- -- Conky settings -- #
 	background = true,
-	update_interval = 3,
+	update_interval = 1,
 
 	cpu_avg_samples = 2,
 	net_avg_samples = 2,
@@ -16,40 +16,39 @@ conky.config = {
 
 -- -- Window specifications -- #
 
-	own_window = true,
-	own_window_type = 'desktop',
-	own_window_transparent = true,
-	own_window_hints = 'undecorated,sticky,skip_taskbar,skip_pager,below',
-	own_window_argb_value = 0,
-	own_window_argb_visual = true,
-	own_window_colour = '#000000',
+own_window = true,
+own_window_type = 'override',
+own_window_transparent = false, -- switch for /complete/ transparency; if false use own_window_colour
+own_window_colour = '#101214',
+own_window_argb_visual = true, -- switch for gradual transparency; set with own_window_argb_value
+own_window_argb_value = 100, -- has an effect only of own_window_argb_visual = true; value between 0 (=transparent) to 255 (=not transparent)
 
 
-	border_inner_margin = 0,
-	border_outer_margin = 0,
+	border_inner_margin = 3,
+	border_outer_margin = 3,
 
 	minimum_width = 160, minimum_height = 100,
 	maximum_width = 160,
 
 	alignment = 'top_left',
-	gap_x = 30,
-	gap_y = 300,
+	gap_x = 1740,
+	gap_y = 250,
 
 -- -- Graphics settings -- #
 	draw_shades = false,
 	draw_outline = false,
 	draw_borders = false,
-	draw_graph_borders = false,
+	draw_graph_borders = true,
 
 -- -- Text settings -- #
 	use_xft = true,
-	font = 'Santana:size=12',
+	font = 'hack :size=16',
 	xftalpha = 0.8,
-
 	uppercase = false,
+	
 
-	default_color = '#A8A8A8',
-	color0 = '#CACACA',
+	default_color = '${xrdb:color2:#555}',
+	color0 = '#969696',
 	color1 = '#AAAAAA',
 	color2 = '#518EAD',
 	color3 = '#FFBB00',
@@ -59,30 +58,30 @@ conky.config = {
 
 };
 conky.text = [[
-${font Ubuntu Condensed:size=16}${color2}${alignc}ASIFBE4LIVE${color3}STUDIOS
+${font Ubuntu Condensed:size=13}${color2}${alignc}ASIFBE4LIVE${color3}STUDIOS
 ${font Ubuntu Condensed:size=10}${color0}System: ${color0}${alignr}$sysname$kernel
 ${font Ubuntu Condensed:size=10}${color1}Host ${alignr}${color0}${nodename}${color0}
 ${font Ubuntu Condensed:size=10}${color0}${color1}Uptime: ${color0}${alignr}${uptime}${color0}${alignr}
 ${color0}Load: ${alignr}${loadavg 1}
 -------------------------------------------------------------
 ${font Ubuntu Condensed:size=10}${color0}Gpu: ${alignr}${color0}${exec nvidia-smi --query-gpu=gpu_name --format=csv,noheader,nounits}$color
-${font Ubuntu Condensed:size=10}${color0}Gpu Mem ${alignr}${color0}${execi 5 nvidia-settings -q [gpu:0]/UsedDedicatedGPUMemory -t} / ${exec nvidia-settings -q [gpu:0]/TotalDedicatedGPUMemory -t} MiB
+${font Ubuntu Condensed:size=10}${color0}Gpu Mem ${alignr}${color1}${execi 5 nvidia-settings -q [gpu:0]/UsedDedicatedGPUMemory -t} ${color2} / MiB ${color3}${exec nvidia-settings -q [gpu:0]/TotalDedicatedGPUMemory -t}
 ${font Ubuntu Condensed:size=10}${color0}Gpu Temp: ${alignr}${color0}${nvidia temp} °C
 ${font Ubuntu Condensed:size=10}${color0}Gpu Clock ${alignr}${color0}${nvidia gpufreq} MHz
 ${font Ubuntu Condensed:size=10}${color0}Mem Clock ${alignr}${color0}${nvidia memfreq} MHz
 ${font Ubuntu Condensed:size=10}${color0}Power Draw ${alignr}${color0} ${exec nvidia-smi | grep % | cut -c 21-23} W
-${font Ubuntu Condensed:size=10}${color0}Fan speed ${alignr}${color0} ${exec nvidia-smi --query-gpu=fan.speed --format=csv | sed -e 's/[^0-9]//g' | tr -d '\n'} %
+#${font Ubuntu Condensed:size=10}${color0}Fan speed ${alignr}${color0} acpifan
 -------------------------------------------------------------
 ${font Ubuntu Condensed:size=10}${color0}Cpu: ${color0}${alignr}${execi 6000 cat /proc/cpuinfo | grep -i 'Model name' -m 1 | cut -c14-43}
 ${font Ubuntu Condensed:size=10}${color0}Cpu Usage ${color0}${alignr} $cpu%
 ${font Ubuntu Condensed:size=10}${color0}Cpu Temp ${color0}${alignr}${execi 10 sensors | grep 'Core 0' | awk {'print $3'}}
-${font Ubuntu Condensed:size=10}${color0}Cpu Clock ${color0}${alignr} ${freq_g} Ghz
+${font Ubuntu Condensed:size=10}${color0}Cpu Clock ${color1}${alignr} ${freq_g} Ghz
 -------------------------------------------------------------
-${font Ubuntu Condensed:size=10}${color0}Nvme: $fs_type ${color0}${alignr}$fs_used/$fs_size $fs_used_perc%
+${font Ubuntu Condensed:size=10}${color0}Nvme: ${color0}${alignr}$fs_used/$fs_size $fs_used_perc%
 ${font Ubuntu Condensed:size=10}${color0} Read ${alignr}${diskio_read}
 ${font Ubuntu Condensed:size=10}${color0} Write ${alignr}${diskio_write}
 -------------------------------------------------------------
-${color0}Processes: ${alignr}${running_processes}/${processes}${color0}
+${color0}Processes: ${alignr}${running_processes}/${processes}${color1}
 -------------------------------------------------------------
 ${top name 1} ${color0}${alignr}${top cpu 1}
 -------------------------------------------------------------
@@ -90,11 +89,16 @@ ${font Ubuntu Condensed:size=10}${color0}Ram ${color0}${alignr}$mem / $memmax ${
 -------------------------------------------------------------
 ${top_mem name 1} ${color0}${alignr}${top_mem mem 1}
 -------------------------------------------------------------
-${font Ubuntu Condensed:size=10}${color0}Network:
-${color0}Download ${color2}${alignr}${color2}${downspeedf enp0s20f0u4} KiB/s
-${color0}Upload ${color3}${alignr}${color3}${upspeedf enp0s20f0u4} KiB/s
-
+${font Ubuntu Condensed:size=10}${color0}Network: ${alignr}${color0}${wireless_link_qual_perc wlp0s20f3}%
+${color0}Download ${color2}${alignr}${color2}${downspeedf wlp0s20f3} KiB/s
+${color0}Upload ${color3}${alignr}${color3}${upspeedf wlp0s20f3} KiB/s
 #${font Ubuntu Condensed:Bold:size=11}${color0}${execi 6000 lsb_release -d | grep 'Descr'|awk {'print $2 " " $3" " $4" " $5'}}${alignr}${execi 6000 lsb_release -a | grep 'Release'|awk {'print $2""$3""$4""$5'}}${color}
 #${alignc 0}${font Nimbus Sans Narrow:size=13}${color1}${time %H:%M:%S}
 #${font Ubuntu Condensed:size=11}${voffset 0}${alignc}${time %A, %d %B %Y}
+#${font Ubuntu Condensed:Bold:size=11}${color0}${execi 6000 lsb_release -d | grep 'Descr'|awk {'print $2 " " $3" " $4" " $5'}}${alignr}${execi 6000 lsb_release -a | grep 'Release'|awk {'print $2""$3""$4""$5'}}${color}
+#${alignc 0}${font Nimbus Sans Narrow:size=13}${color1}${time %H:%M:%S}
+#${font Ubuntu Condensed:size=11}${voffset 0}${alignc}${time %A, %d %B %Y}
+
+${font Ubuntu Condensed:size=10}${color2}SYSTEM76 ${color0}${alignr}Oryx Pro oryp5
 ]];
+
