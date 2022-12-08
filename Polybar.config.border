@@ -34,7 +34,7 @@ format-offset =
 ; Nord theme ============
 background = #AA282C34
 foreground = ${xrdb:color7:#222}
-foreground-alt = ${xrdb:color6:#555}
+foreground-alt = ${xrdb:color7:#222}
 alert = #664B00
 volume-min = #a3be8c
 volume-med = #ebcb8b
@@ -87,20 +87,20 @@ module-margin-left = .75
 module-margin-right = .75
 
 font-0 = "Decker bond:size=10;"
-font-1 = "FontAwesome:size=11;"
-font-2 = "Noto Sans Mayan Numerals:size=11;0"
-font-3 = "joypixels:style=Regular:scale=11;0"
-font-4 = "Nimbus Sans Narrow:style=Regular:size=9;0"
+font-1 = "FontAwesome:size=10;"
+font-2 = "Noto Sans Mayan Numerals:size=10;0"
+font-3 = "joypixels:style=Regular:scale=10;0"
+font-4 = "Nimbus Sans Narrow:style=Regular:size=10;0"
 font-5 = "Cascadia Code:size=10;"
-font-6 = "Symbols Nerd Font:size=11;"
-font-7 = "Noto Sans Symbols2:size=11;"
-font-8 = "SauceCodePro Nerd Font:size=9;"
+font-6 = "Symbols Nerd Font:size=10;"
+font-7 = "Noto Sans Symbols2:size=10;"
+font-8 = "SauceCodePro Nerd Font:size=10;"
 
-;sep spotify1 sep spotify-prev sep spotify-play-pause sep spotify-next  sep jgm popup-calendar
+;sep spotify1 sep spotify-prev sep spotify-play-pause sep spotify-next  sep jgm popup-calendar   popup-calendar
 
 modules-left = kernel sep jgmenu sep i3 sep xwindow sep 
 modules-center = 
-modules-right = sep uptime sep xweather sep popup-calendar sep all-updates
+modules-right = sep uptime sep xweather sep date sep all-updates
 
 separator =
 
@@ -203,14 +203,14 @@ module-margin-left = .75
 module-margin-right = .75
 
 font-0 = "Decker bond:size=10;"
-font-1 = "FontAwesome:size=11;"
-font-2 = "Noto Sans Mayan Numerals:size=11;0"
-font-3 = "joypixels:style=Regular:scale=11;0"
-font-4 = "Nimbus Sans Narrow:style=Regular:size=9;0"
+font-1 = "FontAwesome:size=10;"
+font-2 = "Noto Sans Mayan Numerals:size=10;0"
+font-3 = "joypixels:style=Regular:scale=10;0"
+font-4 = "Nimbus Sans Narrow:style=Regular:size=10;0"
 font-5 = "Cascadia Code:size=10;"
-font-6 = "Symbols Nerd Font:size=11;"
-font-7 = "Noto Sans Symbols2:size=11;"
-font-8 = "SauceCodePro Nerd Font:size=9;"
+font-6 = "Symbols Nerd Font:size=10;"
+font-7 = "Noto Sans Symbols2:size=10;"
+font-8 = "SauceCodePro Nerd Font:size=10;"
 
 ;weather temperature2 filesystem battery wireless-network sep networkspeedup sep networkspeeddown sep  
 ;alsa variety pavolume volume cpu-coreload cup network-traffic
@@ -662,21 +662,21 @@ interval = 1.0
 
 ; See "https://en.cppreference.com/w/cpp/io/manip/put_time" for details on how to format the date string
 ; NOTE: if you want to use syntax tags here you need to use %%{...}
-date = %Y-%m-%d%
+date = 
 
 ; Optional time format
-time = %H:%M
+time =   %k: %M: %S  %Y 
 
 ; if `date-alt` or `time-alt` is defined, clicking
 ; the module will toggle between formats
-date-alt = %A, %d %B %Y
-time-alt = %H:%M
+date-alt =  %c   %j
+time-alt =
 
 ; Available tags:
 ;   <label> (default)
-;format = 🕓 :  <label>
+format =  : <label>
 format-background = ${colors.background}
-format-foreground = ${colors.foreground}
+format-foreground = #FFFFFF
 
 ; Available tokens:
 ;   %date%
@@ -760,7 +760,7 @@ type = custom/script
 interval = 1
 exec = echo  ":  Pi "
 format-prefix = "說 "
-format-prefix-foreground = #1E90FF
+format-prefix-foreground= ${xrdb:color5:#555}
 click-left = exec wal -i /home/asifbe4/Backgrounds -e
 click-right = wal -R
 format-foreground = ${colors.foreground}
@@ -802,7 +802,7 @@ interval = 1
 label = %gb_used%
 format = <label>
 format-prefix = " :  "
-format-prefix-foreground = #FFFFFF
+format-prefix-foreground= ${xrdb:color10:#222}
 format-underline = #565529
 ;format-overline = #3b3a00
 format-foreground = ${colors.foreground}
@@ -1168,7 +1168,7 @@ label-maxlen = 150
 ; Available tokens:
 ;   None
 label-empty = Hello
-label-empty-foreground = ${xrdb:color8:#222}
+label-empty-foreground = ${xrdb:color10:#222}
 
 ################################################################################
 
