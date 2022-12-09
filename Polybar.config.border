@@ -575,7 +575,7 @@ format-foreground = ${colors.foreground}
 format-background = ${colors.background}
 format-prefix = "閭 :  "
 format-prefix-foreground = #1E90FF
-format-underline = #565529
+;format-underline = #565529
 ;format-overline = #3b3a00
 label-font = 3
 
@@ -665,7 +665,7 @@ interval = 1.0
 date = 
 
 ; Optional time format
-time =   %k: %M: %S  %Y 
+time =   %k : %M : %S  %Y 
 
 ; if `date-alt` or `time-alt` is defined, clicking
 ; the module will toggle between formats
@@ -751,7 +751,7 @@ format-prefix-foreground = #FFBB00
 click-left = exec /usr/bin/brave %U https://www.pandora.com/station/play/577763197240388217
 format-foreground = ${colors.foreground}
 format-background = ${colors.background}
-format-underline = #565529
+;format-underline = #565529
 
 ###################
 
@@ -989,7 +989,7 @@ interval = 100
 label = %output%
 format-foreground = ${colors.foreground}
 format-background = ${colors.background}
-format-prefix = " : "  
+format-prefix = " : "  
 format-prefix-foreground = ${xrdb:color6:#555}
 format-underline = #565529
 #format-overline = #3b3a00
@@ -1058,14 +1058,15 @@ format-disconnected-prefix-foreground = #5FB0FF
 format-disconnected-prefix-background = ${colors.background}
 format-disconnected-prefix-underline = #4D4D4D
 
-ramp-signal-0 = ⡯
-ramp-signal-1 = ⢽
-ramp-signal-2 = ⣘
-ramp-signal-3 = ⣼
-ramp-signal-4 = ⣙
-ramp-signal-5 = ⣎
-ramp-signal-6 = ⣳
-ramp-signal-7 = ⣿
+
+ramp-signal-0 = 𝍥 
+ramp-signal-1 = 𝍥  
+ramp-signal-2 = 𝍦  
+ramp-signal-3 = 𝍧  
+ramp-signal-4 = 𝍧  
+ramp-signal-5 = 𝍨
+ramp-signal-6 = 𝍨
+ramp-signal-7 = 𝍤
 ramp-signal-foreground = #FFBB00
 click = exec nm-applet 
 
@@ -1095,7 +1096,7 @@ format-prefix = "󾓦 :  "
 format-prefix-foreground = #888888
 format-prefix-background = ${colors.background}
 ;format-overline = #3b3a00
-format-underline= #565529
+;format-underline= #565529
 
 format-foreground = ${colors.foreground}
 format-background = ${colors.background}
